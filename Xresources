@@ -1,0 +1,46 @@
+URxvt*transparent: false
+!URxvt*tintColor: Blue
+URxvt*saveLines: 20000
+URxvt*foreground: #eeeeee
+URxvt*background: #3f3f3f
+!URxvt*font: xft:Bitstream Vera Sans Mono:pixelsize=12:antialias=true:hinting=true
+!URxvt*boldFont: xft:Bitstream Vera Sans Mono:bold:pixelsize=12:antialias=true:hinting=true
+!URxvt*font: xft:Inconsolta for Powerline:size=10
+!URxvt*boldFont: xft:DejaVu Sans Mono:bold:pixelsize=12:antialias=true:hinting=true
+URxvt*font:                 xft:Inconsolata-dz for Powerline:regular:size=10:antialias=true:hinting=slight
+!URxvt*imFont:               xft:Inconsolta for Powerline:regular:size=11:antialias=true:hinting=false
+!URxvt*boldFont:             xft:Inconsolta for Powerline:bold:size=11:antialias=true:hinting=false
+!URxvt*italicFont:           xft:Inconsolta for Powerline:italic:size=11:antialias=true:hinting=false
+!URxvt*boldItalicFont:       xft:Inconsolta for Powerline:bold:italic:size=11:antialias=true:hinting=false
+!URxvt*font: xft:Liberation Mono:pixelsize=13:antialias=true:hinting=true
+!URxvt*boldFont: xft:Liberation Mono:bold:pixelsize=13:antialias=true:hinting=true
+!URxvt*font: xft:terminus:pixelsize=15
+!URxvt*boldFont: xft:terminus:bold:pixelsize=15
+!URxvt*font:-*-courier-medium-r-normal-*-14-*-*-*-*-*-iso8859-1
+!URxvt*boldFont:-*-courier-bold-r-normal-*-14-*-*-*-*-*-iso8859-1
+!URxvt*color4: RoyalBlue
+!URxvt*color12: RoyalBlue
+URxvt*scrollBar: false
+URxvt*scrollstyle: rxvt
+
+! Zenburn
+URxvt*colorUL:        #c5f779
+URxvt*underlineColor: #c5f779
+ 
+URxvt*color0:         #3f3f3f
+URxvt*color1:         #705050
+URxvt*color2:         #60b48a
+URxvt*color3:         #dfaf8f
+URxvt*color4:         #506070
+URxvt*color5:         #dc8cc3
+URxvt*color6:         #8cd0d3
+URxvt*color7:         #DCDCCC
+ 
+URxvt*color8:         #709080
+URxvt*color9:         #cc9393
+URxvt*color10:        #7f9f7f
+URxvt*color11:        #f0dfaf
+URxvt*color12:        #94bff3
+URxvt*color13:        #ec93d3
+URxvt*color14:        #93e0e3
+URxvt*color15:        #ffffff
