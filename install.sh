@@ -1,3 +1,3 @@
 cp vimrc ~/.vimrc
-cp Xdefaults ~/.Xdefaults
+cp Xresources ~/.Xresources
 cp xinitrc ~/.xinitrc
