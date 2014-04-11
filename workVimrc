@@ -1,0 +1,126 @@
+""""""""""""""""""""""""
+" General
+"""""""""""""""""""""""""
+set nocompatible " no vi compatibility set first!
+filetype off " required for Vundle
+
+" init Vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+" YouCompleteMe autocompletion
+Bundle 'Valloric/YouCompleteMe'
+:let g:ycm_confirm_extra_conf = 0
+
+Bundle 'vim-scripts/taglist.vim'
+
+" Command-T fuzzy file search
+" Bundle 'kien/ctrlp.vim'
+" let g:ctrlp_custom_ignore = {
+  " \ 'dir': '\v[\/](build|hwbuild|3rdParty)'
+  " \ }
+
+Bundle 'wincent/Command-T'
+nnoremap <silent> <C-f> :CommandT<CR>
+let g:CommandTWildIgnore = 'build/**,hwbuild/**,3rdParty/**'
+let g:CommandTMaxHeight = 8
+
+" Powerline
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+
+" Bundle 'vim-scripts/L9'
+" Bundle 'vim-scripts/FuzzyFinder'
+" let s:slash = '[/\\]'
+" let s:startname = '(^|'.s:slash.')'
+" let s:endname = '($|'.s:slash.')'
+" let s:extension = '\.so|\.exe|\.o|\.pyc|\.pyo|\.swp|\.swo'
+" let s:dirname = 'build|hwbuild|3rdParty|docs|packageInstall'
+" let g:fuf_coveragefile_exclude = '\v'.'('.s:startname.'('.s:dirname.')'.s:endname.')|(('.s:extension.')$)'
+" let g:fuf_file_exclude = '\v'.'('.s:startname.'('.s:dirname.')'.s:endname.')|(('.s:extension.')$)'
+" let g:fuf_dir_exclude = '\v'.s:startname.'('.s:dirname.')'.s:endname
+
+" Colors
+Bundle 'rainux/vim-desert-warm-256'
+set t_CO=256  " 256 colors
+syntax enable
+colorscheme desert-warm-256
+:highlight Pmenu ctermfg=Black ctermbg=Blue cterm=None
+:highlight PmenuSel ctermfg=Black ctermbg=White cterm=None
+:highlight DiffAdd ctermbg=DarkBlue cterm=None
+" :highlight DiffDelete ctermbg=5 cterm=None
+:highlight DiffDelete ctermbg=DarkRed cterm=None
+:highlight DiffChange ctermbg=DarkBlue cterm=None
+:highlight DiffText ctermbg=Black cterm=None
+
+" NERDTree
+" Bundle 'scrooloose/nerdtree'
+" map <F4> :NERDTreeToggle<CR>
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+set hidden " allow unsaved background buffers and remember their marks
+set history=10000
+set wildmenu " bash style completion for files/buffers
+
+set foldmethod=syntax
+
+set number
+set ruler " always display footer
+set nohlsearch " don't highlight search after it is over
+set incsearch " do highlight currently selected search term
+set showmatch " show parens match
+set ignorecase smartcase
+set showcmd " show incomplete commands
+set backup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
+set laststatus=2
+" set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+
+"""""""""""""""""""""""""
+" Formatting
+"""""""""""""""""""""""""
+set tabstop=3 " 3 space tabs
+set softtabstop=3
+set shiftwidth=3
+set shiftround
+set expandtab " spaces instead of tabs
+set autoindent
+set nowrap
+
+" autocmd FileType make setlocal noexpandtab " tabs in Makefiles
+" autocmd FileType ruby setlocal ts=2 sts=2 sw=2 " 2 space tabs in ruby
+" autocmd BufRead *.erb set filetype=eruby
+" autocmd BufRead *.scss set filetype=scss
+" autocmd BufRead *.less set filetype=css
+" autocmd BufRead *.coffee set filetype=coffee
+" autocmd FileType eruby setlocal ts=2 sts=2 sw=2 " 2 space tabs in erb
+" autocmd FileType scss setlocal ts=2 sts=2 sw=2 " 2 space tabs in erb
+" autocmd FileType coffee setlocal ts=2 sts=2 sw=2 " 2 space tabs in erb
+
+"""""""""""""""""""""""""
+" Remaps
+"""""""""""""""""""""""""
+" splits
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+" tabs
+nnoremap th  :tabfirst<CR>
+nnoremap tj  :tabnext<CR>
+nnoremap tk  :tabprev<CR>
+nnoremap tl  :tablast<CR>
+nnoremap tn  :tabnew<CR>
+nnoremap td  :tabclose<CR>
+
+map <F4> :e %:p:s,.hpp$,.X123X,:s,.cpp$,.hpp,:s,.X123X$,.cpp,<CR>
+
+"""""""""""""""""""""""""
+" Tags
+"""""""""""""""""""""""""
+set tags=./tags;$HOME
+nnoremap <silent> <F8> :TlistToggle<CR>
