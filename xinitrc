@@ -1,3 +1,3 @@
-[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+[[ -f ~/.Xresources ]] || xrdb -merge ~/.Xresources
 vmware-user-suid-wrapper
 awesome
