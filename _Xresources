@@ -1,36 +1,13 @@
+! Xresources - X11 config
+
+! rxvt-unicode
 URxvt*transparent: false
 URxvt*saveLines: 20000
 URxvt*scrollBar: false
 URxvt*scrollstyle: rxvt
-
-! COLORS
-!
-! color0 	(black) 	= Black
-! color1 	(red) 	        = Red3
-! color2 	(green) 	= Green3
-! color3 	(yellow) 	= Yellow3
-! color4 	(blue) 	        = Blue3
-! color5 	(magenta) 	= Magenta3
-! color6 	(cyan) 	        = Cyan3
-! color7 	(white) 	= AntiqueWhite
-! color8 	(bright black) 	= Grey25
-! color9 	(bright red) 	= Red
-! color10 (bright green) 	= Green
-! color11 (bright yellow) = Yellow
-! color12 (bright blue) 	= Blue
-! color13 (bright magenta)= Magenta
-! color14 (bright cyan) 	= Cyan
-! color15 (bright white) 	= White
-! foreground 		= Black
-! background 		= White
-
-! It is also possible to specify the colour values of foreground, background, cursorColor, cursorColor2, colorBD, colorUL as a number 0-15, as a
-! convenient shorthand to reference the colour name of color0-color15.
-
-! Zenburn
+! Colors
 URxvt*colorUL:        #c5f779
 URxvt*underlineColor: #c5f779
- 
 URxvt*foreground:     #eeeeee
 URxvt*background:     #3f3f3f
 URxvt*color0:         #3f3f3f
@@ -49,10 +26,9 @@ URxvt*color12:        #94bff3
 URxvt*color13:        #ec93d3
 URxvt*color14:        #93e0e3
 URxvt*color15:        #ffffff
-
-! Fonts
+! Font
+URxvt*font: xft:Inconsolata for Powerline:regular:size=11:antialias=true:hinting=slight
 Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.hinting:    true
 Xft.hintstyle:  hintfull
-URxvt*font: xft:Inconsolata for Powerline:regular:size=11:antialias=true:hinting=slight
