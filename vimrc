@@ -27,12 +27,19 @@ set showcmd " show incomplete commands
 set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set guioptions=aic " no menu bar
 
-" Colors
+" Colors and Fonts
 set t_Co=256
 syntax enable
 set background=dark
-
+if has("gui_running")
+  set guifont=Inconsolata\ for\ Powerline\ 12
+  colorscheme base16-tomorrow
+  let g:airline_theme='tomorrow'
+else
+  let g:airline_theme='simple'
+endif
 " Formatting
 set tabstop=4
 set shiftwidth=4
@@ -46,7 +53,6 @@ set cinoptions=N-s
 " Airline
 set laststatus=2 " make room in the statusbar
 let g:airline_powerline_fonts=1
-let g:airline_theme='tomorrow'
 
 let g:CommandTMaxHeight = 8
 
@@ -67,9 +73,3 @@ nnoremap tl  :tablast<CR>
 nnoremap tn  :tabnew<CR>
 nnoremap td  :tabclose<CR>
 
-" GUI
-set guioptions=aic
-if has("gui_running")
-  colorscheme base16-tomorrow
-  set guifont=Inconsolata\ for\ Powerline\ 12
-endif
