@@ -31,9 +31,6 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 " Colors
 set t_Co=256
 syntax enable
-colorscheme base16-tomorrow
-"colorscheme molokai
-"colorscheme desert-warm-256
 set background=dark
 
 " Formatting
@@ -49,7 +46,7 @@ set cinoptions=N-s
 " Airline
 set laststatus=2 " make room in the statusbar
 let g:airline_powerline_fonts=1
-let g:airline_theme='simple'
+let g:airline_theme='tomorrow'
 
 let g:CommandTMaxHeight = 8
 
@@ -73,5 +70,6 @@ nnoremap td  :tabclose<CR>
 " GUI
 set guioptions=aic
 if has("gui_running")
-  set guifont=Inconsolata\ for\ Powerline\ 11
+  colorscheme base16-tomorrow
+  set guifont=Inconsolata\ for\ Powerline\ 12
 endif

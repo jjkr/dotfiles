@@ -2,7 +2,7 @@ URxvt*transparent: false
 URxvt*saveLines: 20000
 URxvt*foreground: #eeeeee
 URxvt*background: #3f3f3f
-URxvt*font:                 xft:Inconsolata-dz for Powerline:regular:size=10:antialias=true:hinting=slight
+URxvt*font: xft:Inconsolata-dz for Powerline:regular:size=11:antialias=true:hinting=slight
 URxvt*scrollBar: false
 URxvt*scrollstyle: rxvt
 
