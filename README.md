@@ -1,2 +1,2 @@
-My dot files
+dotfiles
 ===
