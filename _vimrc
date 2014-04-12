@@ -5,11 +5,11 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Plugin 'gmarik/vundle'
-Plugin 'bling/vim-airline'
-Plugin 'chriskempson/base16-vim'
-"Plugin 'vim-desert-warm-256'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'wincent/Command-T'
+Plugin 'bling/vim-airline' " statusline
+Plugin 'chriskempson/base16-vim' " color schemes
+Plugin 'Valloric/YouCompleteMe' " auto complete
+Plugin 'wincent/Command-T' " fuzzy file search
+Plugin 'tpope/vim-fugitive' " git wrapper
 filetype plugin indent on
 
 " General
@@ -40,6 +40,7 @@ if has("gui_running")
 else
   let g:airline_theme='simple'
 endif
+
 " Formatting
 set tabstop=4
 set shiftwidth=4
@@ -53,8 +54,8 @@ set cinoptions=N-s
 " Airline
 set laststatus=2 " make room in the statusbar
 let g:airline_powerline_fonts=1
-
 let g:CommandTMaxHeight = 8
+" let g:airline#extensions#tabline#enabled = 1
 
 " Remaps
 """"""""""""""""""""""
