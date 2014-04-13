@@ -7,9 +7,10 @@ call vundle#rc()
 Plugin 'gmarik/vundle'
 Plugin 'bling/vim-airline' " statusline
 Plugin 'chriskempson/base16-vim' " color schemes
-Plugin 'Valloric/YouCompleteMe' " auto complete
+"Plugin 'Valloric/YouCompleteMe' " auto complete
 Plugin 'wincent/Command-T' " fuzzy file search
 Plugin 'tpope/vim-fugitive' " git wrapper
+Plugin 'klen/python-mode'
 filetype plugin indent on
 
 " General
@@ -28,6 +29,7 @@ set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set guioptions=aic " no menu bar
+:let mapleader = ','
 
 " Colors and Fonts
 set t_Co=256
@@ -56,6 +58,10 @@ set laststatus=2 " make room in the statusbar
 let g:airline_powerline_fonts=1
 let g:CommandTMaxHeight = 8
 " let g:airline#extensions#tabline#enabled = 1
+" Python mode
+let g:pymode_rope_completion = 1
+let g:pymode_rope_complete_on_dot = 1
+let g:pymode_rope_completion_bind = '<Tab>'
 
 " Remaps
 """"""""""""""""""""""
