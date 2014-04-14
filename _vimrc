@@ -7,10 +7,10 @@ call vundle#rc()
 Plugin 'gmarik/vundle'
 Plugin 'bling/vim-airline' " statusline
 Plugin 'chriskempson/base16-vim' " color schemes
-"Plugin 'Valloric/YouCompleteMe' " auto complete
+Plugin 'Valloric/YouCompleteMe' " auto complete
 Plugin 'wincent/Command-T' " fuzzy file search
 Plugin 'tpope/vim-fugitive' " git wrapper
-Plugin 'klen/python-mode'
+"Plugin 'klen/python-mode'
 filetype plugin indent on
 
 " General
