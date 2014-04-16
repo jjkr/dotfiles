@@ -56,17 +56,20 @@ set cinoptions=N-s
 " Airline
 set laststatus=2 " make room in the statusbar
 let g:airline_powerline_fonts=1
-let g:CommandTWildIgnore = 'build/**,hwbuild/**,3rdParty/**'
+let g:CommandTWildIgnore = 'build/**'
 let g:CommandTMaxHeight = 8
 " let g:airline#extensions#tabline#enabled = 1
 " Python mode
 let g:pymode_rope_completion = 1
 let g:pymode_rope_complete_on_dot = 1
 let g:pymode_rope_completion_bind = '<Tab>'
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_confirm_extra_conf = 0
 
 " Remaps
 """"""""""""""""""""""
-map <F8> :TlistToggle<CR>
+" map <F8> :TlistToggle<CR>
+map <F8> :Cmapkeys <Bar> :Cfile %:r <Bar> Cbreak main <Bar> Crun <CR>
 map <C-f> :CommandT<CR>
 " Splits
 nmap <C-J> <C-W>j
