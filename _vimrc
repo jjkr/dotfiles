@@ -2,15 +2,16 @@ set nocompatible
 
 " Vundle plugins
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Plugin 'gmarik/vundle'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
 Plugin 'bling/vim-airline' " statusline
 Plugin 'chriskempson/base16-vim' " color schemes
 Plugin 'Valloric/YouCompleteMe' " auto complete
 Plugin 'wincent/Command-T' " fuzzy file search
 Plugin 'tpope/vim-fugitive' " git wrapper
 "Plugin 'klen/python-mode'
+call vundle#end()
 filetype plugin indent on
 
 " General
@@ -50,6 +51,8 @@ set expandtab
 set autoindent
 set nowrap
 set cinoptions=N-s
+map <C-K> :pyf /usr/share/vim/addons/syntax/clang-format-3.5.py<CR>
+imap <C-K> <ESC>:pyf /usr/share/vim/addons/syntax/clang-format-3.5.py<CR>i
 
 " Plugins
 """"""""""""""""""""""
