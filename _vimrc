@@ -10,6 +10,8 @@ Plugin 'chriskempson/base16-vim' " color schemes
 Plugin 'Valloric/YouCompleteMe' " auto complete
 Plugin 'wincent/Command-T' " fuzzy file search
 Plugin 'tpope/vim-fugitive' " git wrapper
+Plugin 'scrooloose/syntastic' " multi-language linting
+Plugin 'pangloss/vim-javascript'
 "Plugin 'klen/python-mode'
 call vundle#end()
 filetype plugin indent on
