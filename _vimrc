@@ -12,6 +12,7 @@ Plugin 'wincent/Command-T' " fuzzy file search
 Plugin 'tpope/vim-fugitive' " git wrapper
 Plugin 'scrooloose/syntastic' " multi-language linting
 Plugin 'pangloss/vim-javascript'
+Plugin 'marijnh/tern_for_vim'
 "Plugin 'klen/python-mode'
 call vundle#end()
 filetype plugin indent on
@@ -56,6 +57,44 @@ set cinoptions=N-s
 map <C-K> :pyf /usr/share/vim/addons/syntax/clang-format-3.5.py<CR>
 imap <C-K> <ESC>:pyf /usr/share/vim/addons/syntax/clang-format-3.5.py<CR>i
 
+" Filetype specific
+" C++ Configurations
+autocmd FileType c,cpp,cc set cindent comments=sr:/*,mb:*,el:*/,:// cino=>s,e0,n0,f0,{0,}0,^-1s,:0,=s,g0,h1s,p2,t0,+2,(2,)20,*30
+autocmd FileType c,cpp,cc,h,hpp setlocal colorcolumn=80
+" Markdown configurations
+augroup markdown
+    au!
+    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+augroup END
+" Ruby Configurations
+autocmd filetype ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=80
+" PHP Configurations
+autocmd FileType php setlocal colorcolumn=100
+" HTML configurations
+autocmd FileType html setlocal shiftwidth=4 tabstop=4 softtabstop=4 noexpandtab
+" Python configurations
+autocmd FileType python setlocal shiftwidth=4 expandtab tabstop=4 softtabstop=4
+autocmd FileType python setlocal colorcolumn=80
+autocmd FileType python map <buffer> <F4> :call Flake8()<CR>
+autocmd FileType python autocmd BufWritePre * :%s/\s\+$//e
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+" Javascript configurations
+au BufNewFile,BufReadPost *.js setlocal shiftwidth=2 tabstop=2 expandtab
+"autocmd FileType js setlocal colorcolumn=80
+" Ensure that JSON files have their filetype properly set.
+au BufRead,BufNewFile *.json set filetype=json
+" Puppet configurations
+au FileType puppet setlocal noexpandtab
+" Get jinja filetype selection working correctly for *.jinja.html files.
+au BufNewFile,BufReadPost *.jinja* setlocal filetype=htmljinja
+" Get rid of search hilighting with ,/
+nnoremap <silent> <leader>/ :nohlsearch<CR>
+" Fix those pesky situations where you edit & need sudo to save
+cmap w!! w !sudo tee % >/dev/null
+
+" Toggle spellcheck in normal mode
+:map <F6> :setlocal spell! spelllang=en_us<CR>
+
 " Plugins
 """"""""""""""""""""""
 " Airline
@@ -70,12 +109,17 @@ let g:pymode_rope_complete_on_dot = 1
 let g:pymode_rope_completion_bind = '<Tab>'
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_confirm_extra_conf = 0
+let g:ycm_add_preview_to_completeopt=0
+let g:ycm_confirm_extra_conf=0
+set completeopt-=preview
 
 " Remaps
 """"""""""""""""""""""
 " map <F8> :TlistToggle<CR>
 map <F8> :Cmapkeys <Bar> :Cfile %:r <Bar> Cbreak main <Bar> Crun <CR>
 map <C-f> :CommandT<CR>
+" ,p toggles paste mode
+nmap <leader>p :set paste!<BAR>set paste?<CR>
 " Splits
 nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
