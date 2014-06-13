@@ -32,6 +32,7 @@ set showcmd " show incomplete commands
 set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set mouse=a " resize splits, switch tabs and more w/ mouse
 set guioptions=aic " no menu bar
 :let mapleader = ','
 
