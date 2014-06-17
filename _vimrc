@@ -13,6 +13,7 @@ Plugin 'tpope/vim-fugitive' " git wrapper
 Plugin 'scrooloose/syntastic' " multi-language linting
 Plugin 'pangloss/vim-javascript'
 Plugin 'marijnh/tern_for_vim'
+Plugin 'mileszs/ack.vim'
 "Plugin 'klen/python-mode'
 call vundle#end()
 filetype plugin indent on
