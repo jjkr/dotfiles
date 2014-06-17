@@ -1,0 +1,3 @@
+--ignore-dir=3rdParty
+--ignore-dir=build
+--ignore-dir=hwbuild
