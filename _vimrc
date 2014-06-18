@@ -47,6 +47,7 @@ if has("gui_running")
 else
   let g:airline_theme='simple'
 endif
+:highlight Pmenu ctermfg=Black ctermbg=Blue cterm=None
 
 " Formatting
 set tabstop=4
