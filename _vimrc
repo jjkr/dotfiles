@@ -22,6 +22,7 @@ set hidden " allow unsaved background buffers and remember their marks
 set history=10000
 set wildmenu " bash style completion for files/buffers
 set foldmethod=syntax
+set foldlevelstart=99
 set number
 set ruler " always display footer
 set nohlsearch " don't highlight search after it is over
@@ -63,32 +64,21 @@ imap <C-K> <ESC>:pyf /usr/share/vim/addons/syntax/clang-format-3.5.py<CR>i
 " C++ Configurations
 autocmd FileType c,cpp,cc set cindent comments=sr:/*,mb:*,el:*/,:// cino=>s,e0,n0,f0,{0,}0,^-1s,:0,=s,g0,h1s,p2,t0,+2,(2,)20,*30
 autocmd FileType c,cpp,cc,h,hpp setlocal colorcolumn=80
-" Markdown configurations
 augroup markdown
     au!
     au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 augroup END
-" Ruby Configurations
 autocmd Filetype ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=80
-" PHP Configurations
 autocmd FileType php setlocal colorcolumn=100
-" HTML configurations
 autocmd FileType html setlocal shiftwidth=4 tabstop=4 softtabstop=4 noexpandtab
-" Python configurations
 autocmd FileType python setlocal shiftwidth=4 expandtab tabstop=4 softtabstop=4
 autocmd FileType python setlocal colorcolumn=80
 autocmd FileType python map <buffer> <F4> :call Flake8()<CR>
 autocmd FileType python autocmd BufWritePre * :%s/\s\+$//e
 autocmd FileType python set omnifunc=pythoncomplete#Complete
-" Javascript configurations
 au BufNewFile,BufReadPost *.js setlocal shiftwidth=2 tabstop=2 expandtab
 "autocmd FileType js setlocal colorcolumn=80
-" Ensure that JSON files have their filetype properly set.
 au BufRead,BufNewFile *.json set filetype=json
-" Puppet configurations
-au FileType puppet setlocal noexpandtab
-" Get jinja filetype selection working correctly for *.jinja.html files.
-au BufNewFile,BufReadPost *.jinja* setlocal filetype=htmljinja
 " Get rid of search hilighting with ,/
 nnoremap <silent> <leader>/ :nohlsearch<CR>
 " Force save
@@ -120,7 +110,7 @@ set completeopt-=preview
 map <F8> :Cmapkeys <Bar> :Cfile %:r <Bar> Cbreak main <Bar> Crun <CR>
 map <C-f> :CommandT<CR>
 " ,p toggles paste mode
-nmap <leader>p :set paste!<BAR>set paste?<CR>
+nmap <silent> <leader>p :set paste!<BAR>set paste?<CR>
 " Splits
 nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
