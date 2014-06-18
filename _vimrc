@@ -33,7 +33,7 @@ set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set mouse=a " resize splits, switch tabs and more w/ mouse
-set guioptions=aic " no menu bar
+set guioptions=aic " no menu bar in gvim
 :let mapleader = ','
 
 " Colors and Fonts
@@ -69,7 +69,7 @@ augroup markdown
     au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 augroup END
 " Ruby Configurations
-autocmd filetype ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=80
+autocmd Filetype ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=80
 " PHP Configurations
 autocmd FileType php setlocal colorcolumn=100
 " HTML configurations
@@ -91,7 +91,7 @@ au FileType puppet setlocal noexpandtab
 au BufNewFile,BufReadPost *.jinja* setlocal filetype=htmljinja
 " Get rid of search hilighting with ,/
 nnoremap <silent> <leader>/ :nohlsearch<CR>
-" Fix those pesky situations where you edit & need sudo to save
+" Force save
 cmap w!! w !sudo tee % >/dev/null
 
 " Toggle spellcheck in normal mode
