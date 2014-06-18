@@ -12,6 +12,7 @@ Plugin 'wincent/Command-T' " fuzzy file search
 Plugin 'tpope/vim-fugitive' " git wrapper
 Plugin 'scrooloose/syntastic' " multi-language linting
 Plugin 'pangloss/vim-javascript'
+Plugin 'vim-ruby/vim-ruby'
 Plugin 'marijnh/tern_for_vim'
 "Plugin 'klen/python-mode'
 call vundle#end()
