@@ -63,8 +63,6 @@ map <C-K> :pyf /usr/share/vim/addons/syntax/clang-format-3.5.py<CR>
 imap <C-K> <ESC>:pyf /usr/share/vim/addons/syntax/clang-format-3.5.py<CR>i
 
 " Filetype specific
-" C++ Configurations
-autocmd FileType c,cpp,cc set cindent comments=sr:/*,mb:*,el:*/,:// cino=>s,e0,n0,f0,{0,}0,^-1s,:0,=s,g0,h1s,p2,t0,+2,(2,)20,*30
 autocmd FileType c,cpp,cc,h,hpp setlocal colorcolumn=80
 augroup markdown
     au!
