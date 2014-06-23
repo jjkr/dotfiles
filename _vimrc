@@ -15,6 +15,8 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 "Plugin 'klen/python-mode'
 call vundle#end()
 filetype plugin indent on
@@ -103,6 +105,11 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_add_preview_to_completeopt=0
 let g:ycm_confirm_extra_conf=0
 set completeopt-=preview
+" Ultisnips
+let g:UltiSnipsExpandTrigger="<c-Space>" " don't use <tab> w/ YCM
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical"
 
 " Remaps
 """"""""""""""""""""""
