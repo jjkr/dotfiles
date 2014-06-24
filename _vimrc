@@ -65,7 +65,7 @@ map <C-K> :pyf /usr/share/vim/addons/syntax/clang-format-3.5.py<CR>
 imap <C-K> <ESC>:pyf /usr/share/vim/addons/syntax/clang-format-3.5.py<CR>i
 
 " Filetype specific
-autocmd FileType c,cpp,cc,h,hpp setlocal colorcolumn=80
+autocmd FileType c,cpp,cc,h,hpp setlocal colorcolumn=81
 augroup markdown
     au!
     au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
