@@ -1,6 +1,6 @@
 set nocompatible
 
-" Vundle plugins
+" Vundle plugins {{{
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -20,8 +20,9 @@ Plugin 'honza/vim-snippets'
 "Plugin 'klen/python-mode'
 call vundle#end()
 filetype plugin indent on
+" }}}
 
-" General
+" General {{{
 set hidden " allow unsaved background buffers and remember their marks
 set history=10000
 set wildmenu " bash style completion for files/buffers
@@ -39,9 +40,11 @@ set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set mouse=a " resize splits, switch tabs and more w/ mouse
 set guioptions=aic " no menu bar in gvim
+set modelines=1 " allow vim modelines on last line of file
 :let mapleader = ','
+" }}}
 
-" Colors and Fonts
+" Colors and Fonts {{{
 set t_Co=256
 syntax enable
 set background=dark
@@ -53,18 +56,21 @@ else
   let g:airline_theme='simple'
 endif
 :highlight Pmenu ctermfg=Black ctermbg=Blue cterm=None
+" }}}
 
-" Formatting
+" Formatting {{{
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
 set expandtab
 set autoindent
 set nowrap
 set cinoptions=N-s
 map <C-K> :pyf /usr/share/vim/addons/syntax/clang-format-3.5.py<CR>
 imap <C-K> <ESC>:pyf /usr/share/vim/addons/syntax/clang-format-3.5.py<CR>i
+" }}}
 
-" Filetype specific
+" Filetype specific {{{
 autocmd FileType c,cpp,cc,h,hpp setlocal colorcolumn=81
 augroup markdown
     au!
@@ -83,14 +89,11 @@ au BufNewFile,BufReadPost *.js setlocal shiftwidth=2 tabstop=2 expandtab
 au BufRead,BufNewFile *.json set filetype=json
 " Get rid of search hilighting with ,/
 nnoremap <silent> <leader>/ :nohlsearch<CR>
-" Force save
-cmap w!! w !sudo tee % >/dev/null
+" }}}
 
-" Toggle spellcheck in normal mode
-:map <F6> :setlocal spell! spelllang=en_us<CR>
 
-" Plugins
-""""""""""""""""""""""
+" Plugins {{{
+
 " Airline
 set laststatus=2 " make room in the statusbar
 let g:airline_powerline_fonts=1
@@ -110,12 +113,16 @@ let g:UltiSnipsExpandTrigger="<c-Space>" " don't use <tab> w/ YCM
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
+" }}}
 
-" Remaps
-""""""""""""""""""""""
+" Remaps {{{
 " map <F8> :TlistToggle<CR>
 map <F8> :Cmapkeys <Bar> :Cfile %:r <Bar> Cbreak main <Bar> Crun <CR>
+" Toggle spellcheck in normal mode
+:map <F6> :setlocal spell! spelllang=en_us<CR>
 map <C-f> :CommandT<CR>
+" Force save
+cmap w!! w !sudo tee % >/dev/null
 " ,p toggles paste mode
 nmap <silent> <leader>p :set paste!<BAR>set paste?<CR>
 " Splits
@@ -130,4 +137,6 @@ nnoremap tk  :tabprev<CR>
 nnoremap tl  :tablast<CR>
 nnoremap tn  :tabnew<CR>
 nnoremap td  :tabclose<CR>
+" }}}
 
+" vim:foldmethod=marker:foldlevel=0
