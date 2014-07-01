@@ -127,6 +127,9 @@ map <F8> :Cmapkeys <Bar> :Cfile %:r <Bar> Cbreak main <Bar> Crun <CR>
 " Toggle spellcheck in normal mode
 :map <F6> :setlocal spell! spelllang=en_us<CR>
 map <C-f> :CommandT<CR>
+nnoremap <leader>w :vsplit<CR>
+nnoremap <leader>d :Gdiff<CR>
+nnoremap <leader>b :Gblame<CR>
 " Force save
 cmap w!! w !sudo tee % >/dev/null
 " ,p toggles paste mode
