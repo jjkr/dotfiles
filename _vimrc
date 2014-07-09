@@ -18,6 +18,7 @@ Plugin 'marijnh/tern_for_vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'christoomey/vim-tmux-navigator'
 "Plugin 'klen/python-mode'
 call vundle#end()
 filetype plugin indent on
