@@ -5,7 +5,7 @@ base_dir=${PWD}
 
 function link_file {
     source="${base_dir}/$1"
-    target="${HOME}/${1//_/.}"
+    target="${HOME}/${1/_/.}"
     if [ -d "$i" ] ; then
         if [ ! -e "${target}" ] ; then
             mkdir ${target}
@@ -31,7 +31,7 @@ function link_file {
 
 function unlink_file {
     source="${base_dir}/$1"
-    target="${HOME}/${1//_/.}"
+    target="${HOME}/${1/_/.}"
     if [ -e "${target}.df.bak" ] && [ -L "${target}" ]; then
         unlink "${target}"
         mv "$target.df.bak" "$target"
