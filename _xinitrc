@@ -1,3 +1,4 @@
 [[ -f ~/.Xresources ]] || xrdb -merge ~/.Xresources
+( ( sleep 10 && /usr/bin/xscreensaver -no-splash ) & )
 vmware-user-suid-wrapper
 awesome
