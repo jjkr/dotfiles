@@ -2,7 +2,7 @@ BasedOnStyle: Google
 AccessModifierOffset: -4
 AlignEscapedNewlinesLeft: true
 AlignTrailingComments: true
-BreakBeforeBraces: Attach
+BreakBeforeBraces: Allman
 ColumnLimit: 80
 IndentWidth: 4
 Language: Cpp

@@ -19,6 +19,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'fatih/vim-go'
 "Plugin 'klen/python-mode'
 call vundle#end()
 filetype plugin indent on
@@ -110,6 +111,10 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_add_preview_to_completeopt=0
 let g:ycm_confirm_extra_conf=0
 set completeopt-=preview
+
+" Go
+let g:go_bin_path = "/usr/bin"
+let g:go_disable_autoinstall = 1
 
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
