@@ -10,16 +10,19 @@ Plugin 'chriskempson/base16-vim' " color schemes
 Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe' " auto complete
 Plugin 'wincent/Command-T' " fuzzy file search
-Plugin 'tpope/vim-fugitive' " git wrapper
 Plugin 'scrooloose/syntastic' " multi-language linting
+Plugin 'scrooloose/nerdtree'
 Plugin 'pangloss/vim-javascript'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'marijnh/tern_for_vim'
+"Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-fugitive' " git wrapper
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-surround'
+"Plugin 'marijnh/tern_for_vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'fatih/vim-go'
 "Plugin 'klen/python-mode'
 call vundle#end()
 filetype plugin indent on
@@ -80,6 +83,7 @@ augroup markdown
     au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 augroup END
 autocmd Filetype ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=80
+autocmd Filetype erb setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=80
 autocmd FileType php setlocal colorcolumn=100
 autocmd FileType html setlocal shiftwidth=4 tabstop=4 softtabstop=4 noexpandtab
 autocmd FileType python setlocal shiftwidth=4 expandtab tabstop=4 softtabstop=4
@@ -128,8 +132,9 @@ let g:UltiSnipsEditSplit="vertical"
 " }}}
 
 " Remaps {{{
-" map <F8> :TlistToggle<CR>
-map <F8> :Cmapkeys <Bar> :Cfile %:r <Bar> Cbreak main <Bar> Crun <CR>
+map <F9> :NERDTreeToggle<CR>
+map <F8> :TlistToggle<CR>
+"map <F8> :Cmapkeys <Bar> :Cfile %:r <Bar> Cbreak main <Bar> Crun <CR>
 " Toggle spellcheck in normal mode
 :map <F6> :setlocal spell! spelllang=en_us<CR>
 map <C-f> :CommandT<CR>
