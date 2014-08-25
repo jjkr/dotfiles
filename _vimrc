@@ -62,6 +62,12 @@ else
   let g:airline_theme='simple'
 endif
 :highlight Pmenu ctermfg=Black ctermbg=Blue cterm=None
+:highlight PmenuSel ctermfg=Black ctermbg=White cterm=None
+:highlight DiffAdd ctermbg=237 cterm=None
+" :highlight DiffDelete ctermbg=5 cterm=None
+:highlight DiffDelete ctermbg=237 cterm=None
+:highlight DiffChange ctermbg=237 cterm=None
+:highlight DiffText ctermbg=17 cterm=None
 " }}}
 
 " Formatting {{{
