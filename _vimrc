@@ -9,7 +9,7 @@ Plugin 'bling/vim-airline' " statusline
 Plugin 'chriskempson/base16-vim' " color schemes
 Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe' " auto complete
-Plugin 'wincent/Command-T' " fuzzy file search
+Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic' " multi-language linting
 Plugin 'scrooloose/nerdtree'
 Plugin 'pangloss/vim-javascript'
@@ -19,7 +19,7 @@ Plugin 'tpope/vim-fugitive' " git wrapper
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
 "Plugin 'marijnh/tern_for_vim'
-Plugin 'mileszs/ack.vim'
+Plugin 'rking/ag.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'christoomey/vim-tmux-navigator'
@@ -107,6 +107,15 @@ nnoremap <silent> <leader>/ :nohlsearch<CR>
 
 " Plugins {{{
 
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
 " Airline
 set laststatus=2 " make room in the statusbar
 let g:airline_powerline_fonts=1
@@ -143,10 +152,13 @@ map <F8> :TlistToggle<CR>
 "map <F8> :Cmapkeys <Bar> :Cfile %:r <Bar> Cbreak main <Bar> Crun <CR>
 " Toggle spellcheck in normal mode
 :map <F6> :setlocal spell! spelllang=en_us<CR>
-map <C-f> :CommandT<CR>
+"map <C-f> :CommandT<CR>
+map <C-f> :CtrlP<CR>
 nnoremap <leader>w :vsplit<CR>
 nnoremap <leader>d :Gdiff<CR>
 nnoremap <leader>b :Gblame<CR>
+
+nnoremap <leader>r :e %:p:s,.hpp$,.X123X,:s,.cpp$,.hpp,:s,.X123X$,.cpp,<CR>
 " Force save
 cmap w!! w !sudo tee % >/dev/null
 " ,p toggles paste mode
@@ -163,6 +175,15 @@ nnoremap tk  :tabprev<CR>
 nnoremap tl  :tablast<CR>
 nnoremap tn  :tabnew<CR>
 nnoremap td  :tabclose<CR>
+" Search
+" ,j highlight word under cursor
+:nnoremap <leader>j :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
+" ,h toggle search highlight
+:noremap <leader>h :set hlsearch! hlsearch?<CR>
+" Ag
+nnoremap <leader>g :Ag<SPACE>
+" bind K to grep word under cursor
+nnoremap <leader>f :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
