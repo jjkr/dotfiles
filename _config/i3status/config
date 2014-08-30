@@ -22,14 +22,14 @@ order += "battery 0"
 order += "tztime denver"
 
 wireless wlan0 {
-        format_up = "WLAN (%quality at %essid, %bitrate) %ip"
-        format_down = "WLAN down"
+        format_up = "W (%quality at %essid, %bitrate) %ip"
+        format_down = "W down"
 }
 
 ethernet eth0 {
         # if you use %speed, i3status requires the cap_net_admin capability
-        format_up = "ETH %ip"
-        format_down = "ETH down"
+        format_up = "E %ip"
+        format_down = "E down"
 }
 
 battery 0 {

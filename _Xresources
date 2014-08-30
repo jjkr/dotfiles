@@ -9,7 +9,7 @@ URxvt*scrollstyle: rxvt
 URxvt*colorUL:        #c5f779
 URxvt*underlineColor: #c5f779
 *foreground:     #eeeeee
-*background:     #222222
+*background:     #202020
 *color0:         #3f3f3f
 *color1:         #705050
 *color2:         #60b48a

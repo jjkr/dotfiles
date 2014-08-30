@@ -1,5 +1,5 @@
 # i3
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles and i3bar
 font pango:DejaVu Sans Mono 8
@@ -16,8 +16,8 @@ floating_modifier $mod
 
 # BORDER
 hide_edge_borders none
-new_float pixel 2
-new_window pixel 2
+new_float pixel 0
+new_window pixel 0
 
 # start a terminal
 bindsym $mod+Return exec urxvt
@@ -154,7 +154,7 @@ bar {
           background #202020
           statusline #ffffff
 
-          focused_workspace  #7c7899 #787577 #ffffff
+          focused_workspace  #606060 #606060 #ffffff
           active_workspace   #333333 #5f676a #ffffff
           inactive_workspace #333333 #222222 #888888
           urgent_workspace   #2f343a #900000 #ffffff
