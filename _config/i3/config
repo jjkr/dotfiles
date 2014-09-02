@@ -1,5 +1,7 @@
-# i3
-set $mod Mod4
+# i3 config
+
+# Mod4 is Windows logo key, Mod1 is alt
+set $mod Mod1
 
 # Font for window titles and i3bar
 font pango:DejaVu Sans Mono 8
