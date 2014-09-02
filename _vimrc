@@ -18,6 +18,7 @@ Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-fugitive' " git wrapper
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
+Plugin 'digitaltoad/vim-jade'
 "Plugin 'marijnh/tern_for_vim'
 Plugin 'rking/ag.vim'
 Plugin 'SirVer/ultisnips'
