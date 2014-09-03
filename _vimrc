@@ -105,7 +105,6 @@ au BufRead,BufNewFile *.json set filetype=json
 nnoremap <silent> <leader>/ :nohlsearch<CR>
 " }}}
 
-
 " Plugins {{{
 
 " The Silver Searcher
@@ -117,12 +116,14 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
+
 " Airline
 set laststatus=2 " make room in the statusbar
 let g:airline_powerline_fonts=1
 let g:CommandTWildIgnore = 'build/**'
 let g:CommandTMaxHeight = 8
 " let g:airline#extensions#tabline#enabled = 1
+
 " Python mode
 let g:pymode_rope_completion = 1
 let g:pymode_rope_complete_on_dot = 1
@@ -131,6 +132,10 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_add_preview_to_completeopt=0
 let g:ycm_confirm_extra_conf=0
 set completeopt-=preview
+
+" CtrlP
+let g:ctrlp_map = '<c-f>'
+let g:ctrlp_cmd = 'CtrlPMixed'
 
 " Go
 let g:go_bin_path = "/usr/bin"
@@ -145,6 +150,7 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
+
 " }}}
 
 " Remaps {{{
@@ -153,8 +159,7 @@ map <F8> :TlistToggle<CR>
 "map <F8> :Cmapkeys <Bar> :Cfile %:r <Bar> Cbreak main <Bar> Crun <CR>
 " Toggle spellcheck in normal mode
 :map <F6> :setlocal spell! spelllang=en_us<CR>
-"map <C-f> :CommandT<CR>
-map <C-f> :CtrlP<CR>
+"map <C-f> :CtrlP<CR>
 nnoremap <leader>w :vsplit<CR>
 nnoremap <leader>d :Gdiff<CR>
 nnoremap <leader>b :Gblame<CR>
