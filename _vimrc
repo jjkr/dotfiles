@@ -1,35 +1,38 @@
 set nocompatible
 
 " Vundle plugins {{{
+
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
-Plugin 'bling/vim-airline' " statusline
 Plugin 'chriskempson/base16-vim' " color schemes
+Plugin 'kien/ctrlp.vim'
+Plugin 'rking/ag.vim'
+Plugin 'bling/vim-airline' " statusline
 Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe' " auto complete
-Plugin 'kien/ctrlp.vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 Plugin 'scrooloose/syntastic' " multi-language linting
 Plugin 'scrooloose/nerdtree'
 Plugin 'pangloss/vim-javascript'
-"Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-fugitive' " git wrapper
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'marijnh/tern_for_vim'
-Plugin 'rking/ag.vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
 Plugin 'christoomey/vim-tmux-navigator'
 "Plugin 'klen/python-mode'
+"Plugin 'vim-ruby/vim-ruby'
 call vundle#end()
 filetype plugin indent on
+
 " }}}
 
 " General {{{
+
 set hidden " allow unsaved background buffers and remember their marks
 set history=10000
 set wildmenu " bash style completion for files/buffers
@@ -49,9 +52,11 @@ set mouse=a " resize splits, switch tabs and more w/ mouse
 set guioptions=aic " no menu bar in gvim
 set modelines=1 " allow vim modelines on last line of file
 :let mapleader = ','
+
 " }}}
 
 " Colors and Fonts {{{
+
 set t_Co=256
 syntax enable
 set background=dark
@@ -69,9 +74,11 @@ endif
 :highlight DiffDelete ctermbg=237 cterm=None
 :highlight DiffChange ctermbg=237 cterm=None
 :highlight DiffText ctermbg=17 cterm=None
+
 " }}}
 
 " Formatting {{{
+
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -81,28 +88,34 @@ set nowrap
 set cinoptions=N-s
 map <C-K> :pyf /usr/share/vim/addons/syntax/clang-format-3.5.py<CR>
 imap <C-K> <ESC>:pyf /usr/share/vim/addons/syntax/clang-format-3.5.py<CR>i
+
 " }}}
 
 " Filetype specific {{{
+
 autocmd FileType c,cpp,cc,h,hpp setlocal colorcolumn=81
 augroup markdown
     au!
     au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 augroup END
-autocmd Filetype ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=80
-autocmd Filetype erb setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=80
-autocmd FileType php setlocal colorcolumn=100
-autocmd FileType html setlocal shiftwidth=4 tabstop=4 softtabstop=4 noexpandtab
-autocmd FileType python setlocal shiftwidth=4 expandtab tabstop=4 softtabstop=4
+autocmd Filetype ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=81
+autocmd Filetype erb setlocal shiftwidth=2 tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=81
+autocmd Filetype javascript setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2 colorcolumn=81
+autocmd FileType php setlocal colorcolumn=101
+autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType python setlocal colorcolumn=80
 autocmd FileType python map <buffer> <F4> :call Flake8()<CR>
 autocmd FileType python autocmd BufWritePre * :%s/\s\+$//e
 autocmd FileType python set omnifunc=pythoncomplete#Complete
-au BufNewFile,BufReadPost *.js setlocal shiftwidth=2 tabstop=2 expandtab
 "autocmd FileType js setlocal colorcolumn=80
-au BufRead,BufNewFile *.json set filetype=json
+autocmd BufRead,BufNewFile *.json set filetype=json
 " Get rid of search hilighting with ,/
 nnoremap <silent> <leader>/ :nohlsearch<CR>
+
+" Pin the quickfix window all the way on the bottom
+autocmd FileType qf wincmd J
+
 " }}}
 
 " Plugins {{{
@@ -146,29 +159,37 @@ let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
 " better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:UltiSnipsExpandTrigger = "<c-l>"
+let g:UltiSnipsJumpForwardTrigger = "<c-l>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-c-l>"
 let g:UltiSnipsEditSplit="vertical"
 
 " }}}
 
 " Remaps {{{
-map <F9> :NERDTreeToggle<CR>
-map <F8> :TlistToggle<CR>
-"map <F8> :Cmapkeys <Bar> :Cfile %:r <Bar> Cbreak main <Bar> Crun <CR>
-" Toggle spellcheck in normal mode
-:map <F6> :setlocal spell! spelllang=en_us<CR>
-"map <C-f> :CtrlP<CR>
-nnoremap <leader>w :vsplit<CR>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
+nnoremap <leader>s :split<CR>
+nnoremap <leader>v :vsplit<CR>
 nnoremap <leader>d :Gdiff<CR>
 nnoremap <leader>b :Gblame<CR>
+" highlight word under cursor
+nnoremap <leader>j :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
+" toggle search highlight
+noremap <leader>h :set hlsearch! hlsearch?<CR>
+" toggle paste mode
+nnoremap <silent> <leader>p :set paste!<BAR>set paste?<CR>
+" silver searcher
+nnoremap <leader>g :Ag<SPACE>
+" grep for word under cursor
+nnoremap <leader>f :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" Toggle spellcheck in normal mode
+map <F6> :setlocal spell! spelllang=en_us<CR>
+map <F8> :TlistToggle<CR>
+map <F9> :NERDTreeToggle<CR>
 
 nnoremap <leader>r :e %:p:s,.hpp$,.X123X,:s,.cpp$,.hpp,:s,.X123X$,.cpp,<CR>
-" Force save
-cmap w!! w !sudo tee % >/dev/null
-" ,p toggles paste mode
-nmap <silent> <leader>p :set paste!<BAR>set paste?<CR>
 " Splits
 nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
@@ -181,15 +202,7 @@ nnoremap tk  :tabprev<CR>
 nnoremap tl  :tablast<CR>
 nnoremap tn  :tabnew<CR>
 nnoremap td  :tabclose<CR>
-" Search
-" ,j highlight word under cursor
-:nnoremap <leader>j :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
-" ,h toggle search highlight
-:noremap <leader>h :set hlsearch! hlsearch?<CR>
-" Ag
-nnoremap <leader>g :Ag<SPACE>
-" bind K to grep word under cursor
-nnoremap <leader>f :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
