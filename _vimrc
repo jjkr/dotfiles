@@ -40,15 +40,13 @@ set foldmethod=syntax
 set foldlevelstart=99
 set number
 set ruler " always display footer
-set nohlsearch " don't highlight search after it is over
-set incsearch " do highlight currently selected search term
 set showmatch " show parens match
 set ignorecase smartcase
 set showcmd " show incomplete commands
 set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set mouse=a " resize splits, switch tabs and more w/ mouse
+set mouse=a
 set guioptions=aic " no menu bar in gvim
 set modelines=1 " allow vim modelines on last line of file
 :let mapleader = ','
@@ -120,7 +118,7 @@ autocmd FileType qf wincmd J
 
 " Plugins {{{
 
-" The Silver Searcher
+" The Silver Searcher for fast grep and fuzzy file search
 if executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
@@ -159,8 +157,8 @@ let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
 " better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<c-l>"
-let g:UltiSnipsJumpForwardTrigger = "<c-l>"
+let g:UltiSnipsExpandTrigger = "<c-Tab>"
+let g:UltiSnipsJumpForwardTrigger = "<Tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-c-l>"
 let g:UltiSnipsEditSplit="vertical"
 
@@ -184,12 +182,13 @@ nnoremap <leader>g :Ag<SPACE>
 " grep for word under cursor
 nnoremap <leader>f :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
-" Toggle spellcheck in normal mode
+" Toggle spell check in normal mode
 map <F6> :setlocal spell! spelllang=en_us<CR>
 map <F8> :TlistToggle<CR>
 map <F9> :NERDTreeToggle<CR>
 
 nnoremap <leader>r :e %:p:s,.hpp$,.X123X,:s,.cpp$,.hpp,:s,.X123X$,.cpp,<CR>
+
 " Splits
 nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
@@ -201,7 +200,7 @@ nnoremap tj  :tabnext<CR>
 nnoremap tk  :tabprev<CR>
 nnoremap tl  :tablast<CR>
 nnoremap tn  :tabnew<CR>
-nnoremap td  :tabclose<CR>
+nnoremap tq  :tabclose<CR>
 
 " }}}
 
