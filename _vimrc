@@ -10,7 +10,7 @@ Plugin 'chriskempson/base16-vim' " color schemes
 Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
 Plugin 'bling/vim-airline' " statusline
-Plugin 'ervandew/supertab'
+"Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe' " auto complete
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -18,6 +18,7 @@ Plugin 'scrooloose/syntastic' " multi-language linting
 Plugin 'scrooloose/nerdtree'
 Plugin 'pangloss/vim-javascript'
 Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-fugitive' " git wrapper
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
@@ -84,8 +85,6 @@ set expandtab
 set autoindent
 set nowrap
 set cinoptions=N-s
-map <C-K> :pyf /usr/share/vim/addons/syntax/clang-format-3.5.py<CR>
-imap <C-K> <ESC>:pyf /usr/share/vim/addons/syntax/clang-format-3.5.py<CR>i
 
 " }}}
 
@@ -128,6 +127,11 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
+" Clang Format
+nnoremap <leader>c :pyf /usr/share/vim/addons/syntax/clang-format-3.6.py<CR>
+vnoremap <leader>c :pyf /usr/share/vim/addons/syntax/clang-format-3.6.py<CR>
+inoremap <leader>c <ESC>:pyf /usr/share/vim/addons/syntax/clang-format-3.6.py<CR>i
+
 " Airline
 set laststatus=2 " make room in the statusbar
 let g:airline_powerline_fonts=1
@@ -146,21 +150,22 @@ set completeopt-=preview
 
 " CtrlP
 let g:ctrlp_map = '<c-f>'
-let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_cmd = 'CtrlP'
 
 " Go
 let g:go_bin_path = "/usr/bin"
 let g:go_disable_autoinstall = 1
 
 " make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
+"let g:ycm_key_list_select_completion = ['<C-S-n>', '<Down>']
+"let g:ycm_key_list_previous_completion = ['<C-S-p>', '<Up>']
+"let g:SuperTabDefaultCompletionType = '<C-S-n>'
 " better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<c-Tab>"
-let g:UltiSnipsJumpForwardTrigger = "<Tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-c-l>"
-let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsExpandTrigger       = "<C-g>"
+let g:UltiSnipsListSnippets        = "<F3>"
+let g:UltiSnipsJumpForwardTrigger  = "<Tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<C-S-l>"
+let g:UltiSnipsEditSplit           = "vertical"
 
 " }}}
 
@@ -171,6 +176,7 @@ nnoremap <leader>s :split<CR>
 nnoremap <leader>v :vsplit<CR>
 nnoremap <leader>d :Gdiff<CR>
 nnoremap <leader>b :Gblame<CR>
+nnoremap <leader>m :Make<CR>
 " highlight word under cursor
 nnoremap <leader>j :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
 " toggle search highlight
@@ -187,7 +193,7 @@ map <F6> :setlocal spell! spelllang=en_us<CR>
 map <F8> :TlistToggle<CR>
 map <F9> :NERDTreeToggle<CR>
 
-nnoremap <leader>r :e %:p:s,.hpp$,.X123X,:s,.cpp$,.hpp,:s,.X123X$,.cpp,<CR>
+autocmd FileType c,cpp,cc,h,hpp nnoremap <leader>r :e %:p:s,.hpp$,.X123X,:s,.cpp$,.hpp,:s,.X123X$,.cpp,<CR>
 
 " Splits
 nmap <C-J> <C-W>j
