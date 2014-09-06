@@ -66,9 +66,10 @@ if has("gui_running")
 else
   let g:airline_theme='simple'
 endif
-:highlight LineNr ctermfg=241 cterm=NONE
+:highlight LineNr ctermfg=243 cterm=NONE
 :highlight ColorColumn ctermbg=237 cterm=NONE
 :highlight Folded ctermbg=235 cterm=NONE
+:highlight Search ctermbg=3 ctermfg=Black cterm=NONE
 :highlight Pmenu ctermfg=Black ctermbg=Blue cterm=None
 :highlight PmenuSel ctermfg=Black ctermbg=White cterm=None
 :highlight DiffAdd ctermbg=237 cterm=None
