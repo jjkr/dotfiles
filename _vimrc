@@ -95,24 +95,17 @@ set cinoptions=N-s
 " Filetype specific {{{
 
 autocmd FileType c,cpp,cc,h,hpp setlocal colorcolumn=81
-augroup markdown
-    au!
-    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
-augroup END
-autocmd Filetype ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=81
+" Jump to header
+autocmd FileType c,cpp,cc,h,hpp nnoremap <leader>r :e %:p:s,.hpp$,.X123X,:s,.cpp$,.hpp,:s,.X123X$,.cpp,<CR>
+" Clang Format
+autocmd FileType c,cpp,cc,h,hpp noremap <leader>c :pyf /usr/share/vim/addons/syntax/clang-format-3.6.py<CR>
+autocmd FileType c,cpp,cc,h,hpp inoremap <leader>c <ESC>:pyf /usr/share/vim/addons/syntax/clang-format-3.6.py<CR>i
+
+autocmd Filetype ruby,erb,javascript,html,css,scss setlocal shiftwidth=2 tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=81
 autocmd Filetype erb setlocal shiftwidth=2 tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=81
 autocmd Filetype javascript setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2 colorcolumn=81
-autocmd FileType php setlocal colorcolumn=101
-autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4
-autocmd FileType python setlocal colorcolumn=80
-autocmd FileType python map <buffer> <F4> :call Flake8()<CR>
-autocmd FileType python autocmd BufWritePre * :%s/\s\+$//e
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-"autocmd FileType js setlocal colorcolumn=80
-autocmd BufRead,BufNewFile *.json set filetype=json
-" Get rid of search hilighting with ,/
-nnoremap <silent> <leader>/ :nohlsearch<CR>
+autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 colorcolumn=81
 
 " Pin the quickfix window all the way on the bottom
 autocmd FileType qf wincmd J
@@ -130,11 +123,6 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
-
-" Clang Format
-nnoremap <leader>c :pyf /usr/share/vim/addons/syntax/clang-format-3.6.py<CR>
-vnoremap <leader>c :pyf /usr/share/vim/addons/syntax/clang-format-3.6.py<CR>
-inoremap <leader>c <ESC>:pyf /usr/share/vim/addons/syntax/clang-format-3.6.py<CR>i
 
 " Airline
 set laststatus=2 " make room in the statusbar
@@ -196,8 +184,6 @@ nnoremap <leader>f :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 map <F6> :setlocal spell! spelllang=en_us<CR>
 map <F8> :TlistToggle<CR>
 map <F9> :NERDTreeToggle<CR>
-
-autocmd FileType c,cpp,cc,h,hpp nnoremap <leader>r :e %:p:s,.hpp$,.X123X,:s,.cpp$,.hpp,:s,.X123X$,.cpp,<CR>
 
 " Splits
 nmap <C-J> <C-W>j

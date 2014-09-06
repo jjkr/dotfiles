@@ -69,8 +69,4 @@ fi
 
 set -o vi
 
-#if [[ ! $TERM =~ screen ]]; then
-    #exec tmux
-#fi
-
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
