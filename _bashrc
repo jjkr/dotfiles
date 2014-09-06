@@ -68,16 +68,9 @@ if ! shopt -oq posix; then
 fi
 
 set -o vi
-export P4PORT=perforce.eng.sldomain.com:1666
-export P4USER=joek
-export P4PASSWD=RemarkEoj
-export P4CLIENT=joek_hydra
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
-if [[ ! $TERM =~ screen ]]; then
-    exec tmux
-fi
+#if [[ ! $TERM =~ screen ]]; then
+    #exec tmux
+#fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

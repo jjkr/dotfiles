@@ -6,7 +6,6 @@ require("awful.rules")
 require("beautiful")
 -- Notification library
 require("naughty")
-require("vicious")
 
 -- Load Debian menu entries
 require("debian.menu")
@@ -38,7 +37,7 @@ end
 beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "urxvt"
+terminal = 'urxvt -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -n$USER -s$USER@$HOSTNAME"'
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -100,72 +99,6 @@ mytextclock = awful.widget.textclock({ align = "right" })
 -- Create a systray
 mysystray = widget({ type = "systray" })
 
--- Create a battery monitor widget
-mybattmon = widget({ type = "textbox" })
-mytimer = timer({ timeout = 10 })
-mytimer:add_signal("timeout", function()
-    mybattmon.text = ""
-    file = io.open("/sys/class/power_supply/BAT0/charge_full", "r")
-    if file == nil then
-        io.close()
-    else
-        charge_full = file:read()
-        file:close()
-    end
-
-    file = io.open("/sys/class/power_supply/BAT0/charge_now", "r")
-    if file == nil then
-        io.close()
-    else
-        charge_now = file:read()
-        file:close()
-    end
-
-    if charge_now ~= nil and charge_full ~= nil then
-        charge_percent = 100 * tonumber(charge_now) / tonumber(charge_full)
-        mybattmon.text = string.format("%.1f", charge_percent) .. "%"
-    end
-
-    file = io.open("/sys/class/power_supply/BAT0/status", "r")
-    if file == nil then
-        io.close()
-    else
-        batt_status = file:read()
-        file:close()
-    end
-
-    if batt_status ~= nil then
-        mybattmon.text = mybattmon.text .. " " .. batt_status .. " |"
-    end
-end)
-mytimer:start()
-
---{{{ MEM widget
---[[
-memwidget = widget({ type = "textbox" })
-vicious.register(memwidget, vicious.widgets.mem, '<span background="#777E76" font="Terminus 12"> <span font="Terminus 9" color="#EEEEEE" background="#777E76">$2MB </span></span>', 13)
-memicon = widget ({type = "imagebox" })
-memicon.image = image(beautiful.widget_mem)
-
---}}}
-
---{{{ CPU / sensors widget
-
-cpuwidget = widget({ type = "textbox" })
-vicious.register(cpuwidget, vicious.widgets.cpu,
-'<span background="#4B696D" font="Terminus 12"> <span font="Terminus 9" color="#DDDDDD">$2% <span color="#888888">·</span> $3% </span></span>', 3)
-cpuicon = widget ({type = "imagebox" })
-cpuicon.image = image(beautiful.widget_cpu)
-sensors = widget({ type = "textbox" })
-vicious.register(sensors, vicious.widgets.sensors)
-tempicon = widget ({type = "imagebox" })
-tempicon.image = image(beautiful.widget_temp)
-blingbling.popups.htop(cpuwidget,
-{ title_color = beautiful.notify_font_color_1, 
-user_color = beautiful.notify_font_color_2, 
-root_color = beautiful.notify_font_color_3, 
-terminal   = "terminal --geometry=130x56-10+26"})
---]]
 --}}}
 
 -- Create a wibox for each screen and add it
@@ -243,12 +176,7 @@ for s = 1, screen.count() do
             layout = awful.widget.layout.horizontal.leftright
         },
         mylayoutbox[s],
-        --cpuwidget,
-        --cpuicon,
-        --memwidget,
-        --memicon,
         mytextclock,
-        mybattmon,
         s == 1 and mysystray or nil,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
