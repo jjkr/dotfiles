@@ -170,8 +170,13 @@ nnoremap <leader>v :vsplit<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>gb :Gblame<CR>
-nnoremap <leader>ga :Git add %:p<CR><CR>
 nnoremap <leader>gc :Gcommit -v -q<CR>
+nnoremap <leader>ga :Git add %:p<CR><CR>
+nnoremap <leader>gr :Git branch<Space>
+nnoremap <leader>go :Git checkout<Space>
+nnoremap <leader>gl :silent! Glog<CR>:bot copen<CR>
+nnoremap <leader>gps :Dispatch! git push<CR>
+nnoremap <leader>gpl :Dispatch! git pull<CR>
 nnoremap <leader>m :Make<CR>
 " highlight word under cursor
 nnoremap <leader>j :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
