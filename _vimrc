@@ -188,6 +188,7 @@ nnoremap <silent> <leader>p :set paste!<BAR>set paste?<CR>
 nnoremap <leader>a :Ag<SPACE>
 " grep for word under cursor
 nnoremap <leader>f :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+map <leader>k =
 
 " Toggle spell check in normal mode
 map <F6> :setlocal spell! spelllang=en_us<CR>
