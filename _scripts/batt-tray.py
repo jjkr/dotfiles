@@ -12,7 +12,9 @@ def get_icon_path(icon_name):
     return home_dir + '/.icons/' + icon_name + '.png'
 
 def get_icon_name(state, percentage):
-    if state == 'Discharging':
+    if state == 'Charged':
+        return 'battery_charged'
+    elif state == 'Discharging':
         if percentage < 10:
             return 'battery_empty'
         elif percentage < 20:
@@ -25,14 +27,12 @@ def get_icon_name(state, percentage):
             return 'battery_third_fouth'
         else:
             return 'battery_full'
-    elif state == 'Charged':
-        return 'battery_charged'
     else:
         return 'battery_plugged'
 
 def acpi_state():
-    acpi_out = subprocess.check_output('acpi').strip('\n')
-    m = re.search(r'Battery \d+: (\w+), (\d+)%, (.*) remaining', acpi_out)
+    acpi_out = subprocess.check_output('acpi')
+    m = re.search(r"^Battery \d+: (\w+), (\d+)%, (.*)$", acpi_out)
     return {
         'state'         : m.group(1),
         'percentage'    : m.group(2),
@@ -49,7 +49,6 @@ class BattTray:
     def update(self):
         s = acpi_state()
         i = get_icon_name(s['state'], int(s['percentage']))
-        print(i)
         self.current_icon.set_from_file(get_icon_path(i))
         hover = s['state'] + " " + s['percentage'] + "%, " + s['time_remaining']
         self.current_icon.set_tooltip_text(hover)
