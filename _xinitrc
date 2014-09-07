@@ -1,6 +1,7 @@
 [[ -f ~/.Xresources ]] || xrdb -merge ~/.Xresources
 ( ( sleep 10 && /usr/bin/xscreensaver -no-splash ) & )
 vmware-user-suid-wrapper
+~/.scripts/batt-tray.py &
 wicd-client --tray &
 volumeicon &
 awesome
