@@ -47,11 +47,16 @@ class BattTray:
         gobject.timeout_add_seconds(2, self.update)
 
     def update(self):
-        s = acpi_state()
-        i = get_icon_name(s['state'], int(s['percentage']))
-        self.current_icon.set_from_file(get_icon_path(i))
-        hover = s['state'] + " " + s['percentage'] + "%, " + s['time_remaining']
-        self.current_icon.set_tooltip_text(hover)
+        try:
+            s = acpi_state()
+            i = get_icon_name(s['state'], int(s['percentage']))
+            self.current_icon.set_from_file(get_icon_path(i))
+            hover = s['state'] + " " + s['percentage'] + "%, " \
+                    + s['time_remaining']
+            self.current_icon.set_tooltip_text(hover)
+        except:
+            print('Error updating battery tray icon: ', sys.exc_info()[0],
+                    sys.stderr )
         return True
 
 if __name__ == "__main__":
