@@ -50,7 +50,7 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set mouse=a
 set guioptions=aic " no menu bar in gvim
 set modelines=1 " allow vim modelines on last line of file
-:let mapleader = ','
+let mapleader = ' '
 
 " }}}
 
@@ -66,17 +66,17 @@ if has("gui_running")
 else
   let g:airline_theme='simple'
 endif
-:highlight LineNr ctermfg=243 cterm=NONE
-:highlight ColorColumn ctermbg=237 cterm=NONE
-:highlight Folded ctermbg=235 cterm=NONE
-:highlight Search ctermbg=3 ctermfg=Black cterm=NONE
-:highlight Pmenu ctermfg=Black ctermbg=Blue cterm=None
-:highlight PmenuSel ctermfg=Black ctermbg=White cterm=None
-:highlight DiffAdd ctermbg=237 cterm=None
+highlight LineNr ctermfg=243 cterm=NONE
+highlight ColorColumn ctermbg=235 cterm=NONE
+highlight Folded ctermbg=235 cterm=NONE
+highlight Search ctermbg=3 ctermfg=Black cterm=NONE
+highlight Pmenu ctermfg=Black ctermbg=Blue cterm=None
+highlight PmenuSel ctermfg=Black ctermbg=White cterm=None
+highlight DiffAdd ctermbg=235 cterm=None
 " :highlight DiffDelete ctermbg=5 cterm=None
-:highlight DiffDelete ctermbg=237 cterm=None
-:highlight DiffChange ctermbg=237 cterm=None
-:highlight DiffText ctermbg=17 cterm=None
+highlight DiffDelete ctermbg=235 cterm=None
+highlight DiffChange ctermbg=235 cterm=None
+highlight DiffText ctermbg=17 cterm=None
 
 " }}}
 
@@ -101,7 +101,7 @@ autocmd FileType c,cpp,cc,h,hpp nnoremap <leader>r :e %:p:s,.hpp$,.X123X,:s,.cpp
 autocmd FileType c,cpp,cc,h,hpp noremap <leader>c :pyf /usr/share/vim/addons/syntax/clang-format-3.6.py<CR>
 autocmd FileType c,cpp,cc,h,hpp inoremap <leader>c <ESC>:pyf /usr/share/vim/addons/syntax/clang-format-3.6.py<CR>i
 
-autocmd Filetype ruby,erb,javascript,html,css,scss setlocal shiftwidth=2 tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=81
+autocmd Filetype ruby,erb,javascript,json,html,css,scss setlocal shiftwidth=2 tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=81
 autocmd Filetype erb setlocal shiftwidth=2 tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=81
 autocmd Filetype javascript setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2 colorcolumn=81
@@ -166,8 +166,12 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>s :split<CR>
 nnoremap <leader>v :vsplit<CR>
-nnoremap <leader>d :Gdiff<CR>
-nnoremap <leader>b :Gblame<CR>
+" fugative
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>ga :Git add %:p<CR><CR>
+nnoremap <leader>gc :Gcommit -v -q<CR>
 nnoremap <leader>m :Make<CR>
 " highlight word under cursor
 nnoremap <leader>j :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
@@ -176,7 +180,7 @@ noremap <leader>h :set hlsearch! hlsearch?<CR>
 " toggle paste mode
 nnoremap <silent> <leader>p :set paste!<BAR>set paste?<CR>
 " silver searcher
-nnoremap <leader>g :Ag<SPACE>
+nnoremap <leader>a :Ag<SPACE>
 " grep for word under cursor
 nnoremap <leader>f :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
