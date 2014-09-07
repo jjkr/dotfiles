@@ -25,6 +25,9 @@ Plugin 'tpope/vim-surround'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'maksimr/vim-jsbeautify'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 "Plugin 'klen/python-mode'
 "Plugin 'vim-ruby/vim-ruby'
 call vundle#end()
@@ -98,14 +101,17 @@ autocmd FileType c,cpp,cc,h,hpp setlocal colorcolumn=81
 " Jump to header
 autocmd FileType c,cpp,cc,h,hpp nnoremap <leader>r :e %:p:s,.hpp$,.X123X,:s,.cpp$,.hpp,:s,.X123X$,.cpp,<CR>
 " Clang Format
-autocmd FileType c,cpp,cc,h,hpp noremap <leader>c :pyf /usr/share/vim/addons/syntax/clang-format-3.6.py<CR>
-autocmd FileType c,cpp,cc,h,hpp inoremap <leader>c <ESC>:pyf /usr/share/vim/addons/syntax/clang-format-3.6.py<CR>i
+autocmd FileType c,cpp,cc,h,hpp noremap <leader>k :pyf /usr/share/vim/addons/syntax/clang-format-3.6.py<CR>
 
 autocmd Filetype ruby,erb,javascript,json,html,css,scss setlocal shiftwidth=2 tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=81
 autocmd Filetype erb setlocal shiftwidth=2 tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=81
 autocmd Filetype javascript setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2 colorcolumn=81
 autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 colorcolumn=81
+
+autocmd Filetype javascript,json noremap <leader>k :call JsBeautify()<CR>
+autocmd Filetype html noremap <leader>k :call HtmlBeautify()<CR>
+autocmd Filetype css noremap <leader>k :call CssBeautify()<CR>
 
 " Pin the quickfix window all the way on the bottom
 autocmd FileType qf wincmd J
@@ -168,7 +174,8 @@ nnoremap <leader>s :split<CR>
 nnoremap <leader>v :vsplit<CR>
 " fugative
 nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gd :Gdiff<CR>
+command GdiffInTab tabedit %|Gdiff
+nnoremap <leader>gd :GdiffInTab<CR>
 nnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>gc :Gcommit -v -q<CR>
 nnoremap <leader>ga :Git add %:p<CR><CR>
@@ -201,12 +208,12 @@ nmap <C-K> <C-W>k
 nmap <C-H> <C-W>h
 nmap <C-L> <C-W>l
 " Tabs
-nnoremap th  :tabfirst<CR>
-nnoremap tj  :tabnext<CR>
-nnoremap tk  :tabprev<CR>
-nnoremap tl  :tablast<CR>
-nnoremap tn  :tabnew<CR>
-nnoremap tq  :tabclose<CR>
+nnoremap th :tabfirst<CR>
+nnoremap tj :tabnext<CR>
+nnoremap tk :tabprev<CR>
+nnoremap tl :tablast<CR>
+nnoremap tn :tabnew<CR>
+nnoremap tq :tabclose<CR>
 
 " }}}
 
