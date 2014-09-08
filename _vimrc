@@ -71,7 +71,7 @@ endif
 highlight LineNr ctermfg=243 cterm=NONE
 highlight TabLineFill ctermbg=234 cterm=NONE
 highlight ColorColumn ctermbg=235 cterm=NONE
-highlight Folded ctermbg=235 cterm=NONE
+highlight Folded ctermfg=154 ctermbg=235 cterm=NONE
 highlight Search ctermbg=3 ctermfg=Black cterm=NONE
 highlight Pmenu ctermfg=Black ctermbg=Blue cterm=None
 highlight PmenuSel ctermfg=Black ctermbg=White cterm=None
@@ -113,8 +113,9 @@ autocmd Filetype javascript,json noremap <leader>k :call JsBeautify()<CR>
 autocmd Filetype html noremap <leader>k :call HtmlBeautify()<CR>
 autocmd Filetype css noremap <leader>k :call CssBeautify()<CR>
 
-" Pin the quickfix window all the way on the bottom
+" Stretch preview/quickfix windows
 autocmd FileType qf wincmd J
+autocmd FileType gitcommit wincmd K
 
 " }}}
 
@@ -197,10 +198,12 @@ nnoremap <leader>a :Ag<SPACE>
 nnoremap <leader>f :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 map <leader>k =
 
-" Toggle spell check in normal mode
+" toggle spell check
 map <F6> :setlocal spell! spelllang=en_us<CR>
 map <F8> :TlistToggle<CR>
 map <F9> :NERDTreeToggle<CR>
+" generate tags
+map <F12> :!ctags -R --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
 
 " Splits
 nmap <C-J> <C-W>j
