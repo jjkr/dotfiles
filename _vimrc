@@ -80,7 +80,7 @@ highlight Pmenu ctermfg=Black ctermbg=Blue cterm=None
 highlight PmenuSel ctermfg=Black ctermbg=White cterm=None
 highlight DiffAdd ctermbg=235 cterm=None
 " :highlight DiffDelete ctermbg=5 cterm=None
-highlight DiffDelete ctermfg=52 ctermbg=235 cterm=None
+highlight DiffDelete ctermfg=88 ctermbg=235 cterm=None
 highlight DiffChange ctermbg=235 cterm=None
 highlight DiffText ctermbg=17 cterm=None
 
