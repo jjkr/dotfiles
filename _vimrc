@@ -50,8 +50,10 @@ set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set mouse=a
+set ttymouse=xterm2
 set guioptions=aic " no menu bar in gvim
 set modelines=1 " allow vim modelines on last line of file
+set scrolloff=3 " keep 3 lines above and below cursor
 let mapleader = ' '
 
 " }}}
