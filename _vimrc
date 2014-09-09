@@ -74,6 +74,7 @@ highlight LineNr ctermfg=243 cterm=NONE
 highlight TabLineFill ctermbg=234 cterm=NONE
 highlight ColorColumn ctermbg=235 cterm=NONE
 highlight Folded ctermfg=154 ctermbg=235 cterm=NONE
+highlight FoldColumn ctermfg=154 ctermbg=235 cterm=NONE
 highlight Search ctermbg=3 ctermfg=Black cterm=NONE
 highlight Pmenu ctermfg=Black ctermbg=Blue cterm=None
 highlight PmenuSel ctermfg=Black ctermbg=White cterm=None
