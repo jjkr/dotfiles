@@ -184,8 +184,8 @@ nnoremap <leader>ga :Git add %:p<CR><CR>
 nnoremap <leader>gr :Git branch<Space>
 nnoremap <leader>go :Git checkout<Space>
 nnoremap <leader>gl :silent! Glog<CR>:bot copen<CR>
-nnoremap <leader>gps :Dispatch! git push<CR>
-nnoremap <leader>gpl :Dispatch! git pull<CR>
+nnoremap <leader>gps :Dispatch git push<CR>
+nnoremap <leader>gpl :Dispatch git pull<CR>
 nnoremap <leader>m :Make<CR>
 " highlight word under cursor
 nnoremap <leader>j :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
