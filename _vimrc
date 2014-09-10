@@ -151,6 +151,7 @@ set completeopt-=preview
 " CtrlP
 let g:ctrlp_map = '<c-f>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'c'
 
 " Go
 let g:go_bin_path = "/usr/bin"
