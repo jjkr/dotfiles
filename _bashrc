@@ -67,6 +67,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+export P4CONFIG=.p4config
+
 set -o vi
 
 export PATH="$PATH:$HOME/.scripts" # Add scripts to path
