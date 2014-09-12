@@ -6,6 +6,7 @@ import gobject
 import subprocess
 import re
 import os.path
+import sys
 
 def get_icon_path(icon_name):
     home_dir = os.path.expanduser('~')
@@ -33,11 +34,18 @@ def get_icon_name(state, percentage):
 def acpi_state():
     acpi_out = subprocess.check_output('acpi')
     m = re.search(r"^Battery \d+: (\w+), (\d+)%, (.*)$", acpi_out)
-    return {
-        'state'         : m.group(1),
-        'percentage'    : m.group(2),
-        'time_remaining': m.group(3)
-    }
+    out = {}
+    try:
+        out['state']          = m.group(1)
+        out['percentage']     = m.group(2)
+        out['time_remaining'] = ", " + m.group(3)
+    except:
+        m = re.search(r"^Battery \d+: Full, 100%$", acpi_out)
+        out['state']          = 'Full'
+        out['percentage']     = '100'
+        out['time_remaining'] = ''
+    finally:
+        return out
 
 class BattTray:
     def __init__(self):
@@ -51,7 +59,7 @@ class BattTray:
             s = acpi_state()
             i = get_icon_name(s['state'], int(s['percentage']))
             self.current_icon.set_from_file(get_icon_path(i))
-            hover = s['state'] + " " + s['percentage'] + "%, " \
+            hover = s['state'] + " " + s['percentage'] + "%" \
                     + s['time_remaining']
             self.current_icon.set_tooltip_text(hover)
         except:
