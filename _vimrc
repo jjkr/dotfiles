@@ -54,6 +54,7 @@ set ttymouse=xterm2
 set guioptions=aic " no menu bar in gvim
 set modelines=1 " allow vim modelines on last line of file
 set scrolloff=3 " keep 3 lines above and below cursor
+set fillchars=fold:\ 
 let mapleader = ' '
 
 " }}}
@@ -151,7 +152,7 @@ set completeopt-=preview
 " CtrlP
 let g:ctrlp_map = '<c-f>'
 let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'c'
+let g:ctrlp_root_markers = ['.ycm_extra_conf.py']
 
 " Go
 let g:go_bin_path = "/usr/bin"
@@ -205,7 +206,7 @@ map <F6> :setlocal spell! spelllang=en_us<CR>
 map <F8> :TlistToggle<CR>
 map <F9> :NERDTreeToggle<CR>
 " generate tags
-map <F12> :!ctags -R --c++-kinds=+pl --fields=+iaS --extra=+q {.,**}/*.{cpp,hpp,h,c,cc}<CR>
+map <F12> :!ctags -R --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
 
 " Splits
 nmap <C-J> <C-W>j

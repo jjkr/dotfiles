@@ -18,11 +18,9 @@ flags = [
 '-isystem',
 '/usr/local/include',
 '-I',
-'.',
+'**/src',
 '-I',
-'./src',
-'-I',
-'./inc',
+'**/inc'
 ]
 
 
