@@ -154,8 +154,11 @@ set completeopt-=preview
 
 " CtrlP
 let g:ctrlp_map = '<c-f>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_root_markers = ['.ycm_extra_conf.py']
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '[\/]\.(git|hg|svn)$',
+    \ 'file': '\.(swp|exe|so|dll|bin|zip|gz|bz2|tar|o)$',
+    \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+    \ }
 
 " Go
 let g:go_bin_path = "/usr/bin"
