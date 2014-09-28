@@ -29,6 +29,7 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'mustache/vim-mustache-handlebars'
 "Plugin 'maksimr/vim-jsbeautify'
 "Plugin 'editorconfig/editorconfig-vim'
 "Plugin 'klen/python-mode'
@@ -175,6 +176,8 @@ let g:UltiSnipsListSnippets        = "<F3>"
 let g:UltiSnipsJumpForwardTrigger  = "<Tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<C-S-l>"
 let g:UltiSnipsEditSplit           = "vertical"
+
+let g:mustache_abbreviations = 1
 
 " }}}
 
