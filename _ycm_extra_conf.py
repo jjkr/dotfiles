@@ -3,7 +3,7 @@ import ycm_core
 
 flags = [
 # -std flag is required for ycm
-'-std=c++11',
+'-std=c++14',
 '-Wall',
 '-Wextra',
 '-Wno-c++98-compat',
