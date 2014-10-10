@@ -30,6 +30,7 @@ Plugin 'marijnh/tern_for_vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'milkypostman/vim-togglelist'
 "Plugin 'maksimr/vim-jsbeautify'
 "Plugin 'editorconfig/editorconfig-vim'
 "Plugin 'klen/python-mode'
@@ -178,6 +179,8 @@ let g:UltiSnipsJumpBackwardTrigger = "<C-S-l>"
 let g:UltiSnipsEditSplit           = "vertical"
 
 let g:mustache_abbreviations = 1
+
+let g:toggle_list_no_mappings = 1
 
 " }}}
 
