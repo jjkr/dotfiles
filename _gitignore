@@ -1,0 +1,5 @@
+.agignore
+.clang-format
+.projections.json
+.ycm_extra_conf.py
+.ycm_extra_conf.pyc

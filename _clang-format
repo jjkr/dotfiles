@@ -11,6 +11,8 @@ SpaceBeforeParens: ControlStatements
 SpacesBeforeTrailingComments: 1
 SpacesInAngles: false
 SpacesInParentheses: false
+DerivePointerAlignment: false
+PointerAlignment: Left
 Standard: Cpp11
 TabWidth: 4
 UseTab: Never

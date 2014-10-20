@@ -31,6 +31,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'milkypostman/vim-togglelist'
+Plugin 'vim-scripts/taglist.vim'
 "Plugin 'maksimr/vim-jsbeautify'
 "Plugin 'editorconfig/editorconfig-vim'
 "Plugin 'klen/python-mode'
@@ -113,10 +114,9 @@ autocmd FileType c,cpp,cc,h,hpp nnoremap <leader>r :e %:p:s,.hpp$,.X123X,:s,.cpp
 " Clang Format
 autocmd FileType c,cpp,cc,h,hpp noremap <leader>k :pyf /usr/share/vim/addons/syntax/clang-format-3.6.py<CR>
 
-autocmd Filetype ruby,erb,javascript,json,html,css,scss setlocal shiftwidth=2 tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=81
+autocmd Filetype ruby,erb,javascript,json,html,css,scss,xml,xsd setlocal shiftwidth=2 tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=81
 autocmd Filetype erb setlocal shiftwidth=2 tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=81
 autocmd Filetype javascript setlocal shiftwidth=2 tabstop=2 expandtab
-autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2 colorcolumn=81
 autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 colorcolumn=81
 
 autocmd Filetype javascript,json noremap <leader>k :call JsBeautify()<CR>
@@ -202,6 +202,10 @@ nnoremap <leader>gl :silent! Glog<CR>:bot copen<CR>
 nnoremap <leader>gps :Dispatch git push<CR>
 nnoremap <leader>gpl :Dispatch git pull<CR>
 nnoremap <leader>m :Make<CR>
+nnoremap <leader>M :Make!<CR>
+nnoremap <leader>n :Dispatch<CR>
+nnoremap <leader>N :Dispatch!<CR>
+nnoremap <script> <silent> <leader>c :call ToggleQuickfixList()<CR>
 " highlight word under cursor
 nnoremap <leader>j :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
 " toggle search highlight
