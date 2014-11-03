@@ -212,10 +212,14 @@ nnoremap <leader>t :A<CR>
 nnoremap <script> <silent> <leader>c :call ToggleQuickfixList()<CR>
 " highlight word under cursor
 nnoremap <leader>j :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
+
 " toggle search highlight
-noremap <leader>h :set hlsearch! hlsearch?<CR>
+nnoremap <leader>sh :set hlsearch! hlsearch?<CR>
 " toggle paste mode
-nnoremap <silent> <leader>p :set paste!<BAR>set paste?<CR>
+nnoremap <leader>sp :set paste!<BAR>set paste?<CR>
+" toggle number mode
+nnoremap <leader>sn :set number! number?<CR>
+
 " silver searcher
 nnoremap <leader>a :Ag<SPACE>
 " grep for word under cursor
