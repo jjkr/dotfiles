@@ -208,6 +208,7 @@ nnoremap <leader>m :Make<CR>
 nnoremap <leader>M :Make!<CR>
 nnoremap <leader>n :Dispatch<CR>
 nnoremap <leader>N :Dispatch!<CR>
+nnoremap <leader>t :A<CR>
 nnoremap <script> <silent> <leader>c :call ToggleQuickfixList()<CR>
 " highlight word under cursor
 nnoremap <leader>j :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
