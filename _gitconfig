@@ -11,6 +11,9 @@
 [push]
     default = matching
 
+[pull]
+    rebase = true
+
 [core]
     editor = vim
     pager = less -R
