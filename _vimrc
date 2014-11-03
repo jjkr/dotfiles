@@ -32,6 +32,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'milkypostman/vim-togglelist'
 Plugin 'vim-scripts/taglist.vim'
+Plugin 'embear/vim-localvimrc'
 "Plugin 'maksimr/vim-jsbeautify'
 "Plugin 'editorconfig/editorconfig-vim'
 "Plugin 'klen/python-mode'
@@ -181,6 +182,8 @@ let g:UltiSnipsEditSplit           = "vertical"
 let g:mustache_abbreviations = 1
 
 let g:toggle_list_no_mappings = 1
+
+let g:localvimrc_ask = 0
 
 " }}}
 
