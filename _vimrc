@@ -5,22 +5,24 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'bling/vim-airline'
+Plugin 'chriskempson/base16-vim'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'digitaltoad/vim-jade'
 Plugin 'gmarik/Vundle.vim'
-Plugin 'chriskempson/base16-vim' " color schemes
-Plugin 'kien/ctrlp.vim'
-Plugin 'rking/ag.vim'
-Plugin 'bling/vim-airline' " statusline
-"Plugin 'ervandew/supertab'
-Plugin 'Valloric/YouCompleteMe' " auto complete
-Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'scrooloose/syntastic' " multi-language linting
-Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'pangloss/vim-javascript'
+Plugin 'rking/ag.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-fugitive' " git wrapper
+Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-projectionist'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
@@ -34,6 +36,9 @@ Plugin 'milkypostman/vim-togglelist'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'embear/vim-localvimrc'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Valloric/YouCompleteMe'
+"Plugin 'ervandew/supertab'
+"Plugin 'jiangmiao/auto-pairs'
 "Plugin 'maksimr/vim-jsbeautify'
 "Plugin 'editorconfig/editorconfig-vim'
 "Plugin 'klen/python-mode'
