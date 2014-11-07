@@ -231,7 +231,7 @@ map <F6> :setlocal spell! spelllang=en_us<CR>
 map <F8> :TlistToggle<CR>
 map <F9> :NERDTreeToggle<CR>
 " generate tags
-map <F12> :!ctags -R --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
+map <F12> :!ctags -V -R --exclude=build --exclude=hwbuild --exclude=3rdParty --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
 
 " Splits
 nmap <C-J> <C-W>j
