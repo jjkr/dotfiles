@@ -5,15 +5,14 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'chriskempson/base16-vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'digitaltoad/vim-jade'
-Plugin 'gmarik/Vundle.vim'
 Plugin 'honza/vim-snippets'
 Plugin 'kien/ctrlp.vim'
-Plugin 'marijnh/tern_for_vim'
-Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'pangloss/vim-javascript'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
@@ -27,9 +26,7 @@ Plugin 'tpope/vim-projectionist'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'digitaltoad/vim-jade'
 Plugin 'marijnh/tern_for_vim'
-Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'milkypostman/vim-togglelist'
@@ -98,6 +95,7 @@ highlight DiffAdd ctermbg=235 cterm=None
 highlight DiffDelete ctermfg=88 ctermbg=235 cterm=None
 highlight DiffChange ctermbg=235 cterm=None
 highlight DiffText ctermbg=17 cterm=None
+highlight SignColumn ctermbg=Black cterm=NONE
 
 " }}}
 
