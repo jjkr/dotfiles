@@ -115,7 +115,7 @@ set cinoptions=N-s
 
 autocmd FileType c,cpp,cc,h,hpp setlocal colorcolumn=81
 " Jump to header
-autocmd FileType c,cpp,cc,h,hpp nnoremap <leader>r :e %:p:s,.hpp$,.X123X,:s,.cpp$,.hpp,:s,.X123X$,.cpp,<CR>
+autocmd FileType c,cpp,cc,h,hpp nnoremap <leader>rh :e %:p:s,.hpp$,.X123X,:s,.cpp$,.hpp,:s,.X123X$,.cpp,<CR>
 " Clang Format
 autocmd FileType c,cpp,cc,h,hpp noremap <leader>k :pyf /usr/share/vim/addons/syntax/clang-format-3.6.py<CR>
 
@@ -212,7 +212,14 @@ nnoremap <leader>m :Make<CR>
 nnoremap <leader>M :Make!<CR>
 nnoremap <leader>n :Dispatch<CR>
 nnoremap <leader>N :Dispatch!<CR>
-nnoremap <leader>t :A<CR>
+nnoremap <leader>rt :A<CR>
+" Tabs
+nnoremap th :tabfirst<CR>
+nnoremap tj :tabnext<CR>
+nnoremap tk :tabprev<CR>
+nnoremap tl :tablast<CR>
+nnoremap tn :tabnew<CR>
+nnoremap tq :tabclose<CR>
 nnoremap <script> <silent> <leader>c :call ToggleQuickfixList()<CR>
 " highlight word under cursor
 nnoremap <leader>j :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
@@ -242,13 +249,6 @@ nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
 nmap <C-H> <C-W>h
 nmap <C-L> <C-W>l
-" Tabs
-nnoremap th :tabfirst<CR>
-nnoremap tj :tabnext<CR>
-nnoremap tk :tabprev<CR>
-nnoremap tl :tablast<CR>
-nnoremap tn :tabnew<CR>
-nnoremap tq :tabclose<CR>
 
 " }}}
 
