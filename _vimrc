@@ -6,18 +6,25 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'chriskempson/base16-vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'digitaltoad/vim-jade'
+Plugin 'embear/vim-localvimrc'
 Plugin 'honza/vim-snippets'
+Plugin 'jiangmiao/auto-pairs'
 Plugin 'kien/ctrlp.vim'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'milkypostman/vim-togglelist'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'pangloss/vim-javascript'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-eunuch'
@@ -26,14 +33,7 @@ Plugin 'tpope/vim-projectionist'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'marijnh/tern_for_vim'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'milkypostman/vim-togglelist'
 Plugin 'vim-scripts/taglist.vim'
-Plugin 'embear/vim-localvimrc'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'Valloric/YouCompleteMe'
 "Plugin 'ervandew/supertab'
 "Plugin 'jiangmiao/auto-pairs'
 "Plugin 'maksimr/vim-jsbeautify'
@@ -115,7 +115,7 @@ set cinoptions=N-s
 
 autocmd FileType c,cpp,cc,h,hpp setlocal colorcolumn=81
 " Jump to header
-autocmd FileType c,cpp,cc,h,hpp nnoremap <leader>rh :e %:p:s,.hpp$,.X123X,:s,.cpp$,.hpp,:s,.X123X$,.cpp,<CR>
+autocmd FileType c,cpp,cc,h,hpp nnoremap <leader>ah :e %:p:s,.hpp$,.X123X,:s,.cpp$,.hpp,:s,.X123X$,.cpp,<CR>
 " Clang Format
 autocmd FileType c,cpp,cc,h,hpp noremap <leader>k :pyf /usr/share/vim/addons/syntax/clang-format-3.6.py<CR>
 
@@ -149,7 +149,9 @@ endif
 " Airline
 set laststatus=2 " make room in the statusbar
 let g:airline_powerline_fonts=1
-" let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 
 " Python mode
 let g:pymode_rope_completion = 1
@@ -212,7 +214,8 @@ nnoremap <leader>m :Make<CR>
 nnoremap <leader>M :Make!<CR>
 nnoremap <leader>n :Dispatch<CR>
 nnoremap <leader>N :Dispatch!<CR>
-nnoremap <leader>rt :A<CR>
+nnoremap <leader>aa :A<CR>
+nnoremap <leader>at :A<CR>
 " Tabs
 nnoremap th :tabfirst<CR>
 nnoremap tj :tabnext<CR>
@@ -232,7 +235,7 @@ nnoremap <leader>sp :set paste!<BAR>set paste?<CR>
 nnoremap <leader>sn :set number! number?<CR>
 
 " silver searcher
-nnoremap <leader>a :Ag<SPACE>
+nnoremap <leader>g :Ag<SPACE>
 " grep for word under cursor
 nnoremap <leader>f :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 map <leader>k =
