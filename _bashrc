@@ -73,3 +73,8 @@ set -o vi
 
 export PATH="$PATH:$HOME/.scripts" # Add scripts to path
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:/opt/android/android-sdk-linux/tools"
+
+export ANDROID_SDK_HOME="/opt/android/android-sdk-linux"
+export ANDROID_NDK_HOME="/opt/android/android-ndk-r10c"
+

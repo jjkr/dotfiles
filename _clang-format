@@ -4,7 +4,9 @@ AlignEscapedNewlinesLeft: true
 AlignTrailingComments: true
 BreakBeforeBraces: Allman
 ColumnLimit: 80
+ConstructorInitializerIndentWidth: 4
 IndentWidth: 4
+ContinuationIndentWidth: 4
 Language: Cpp
 NamespaceIndentation: None
 SpaceBeforeParens: ControlStatements

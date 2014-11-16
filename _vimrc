@@ -127,7 +127,6 @@ autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 colorcolum
 autocmd Filetype javascript,json noremap <leader>k :call JsBeautify()<CR>
 autocmd Filetype html noremap <leader>k :call HtmlBeautify()<CR>
 autocmd Filetype css noremap <leader>k :call CssBeautify()<CR>
-
 " Stretch preview/quickfix windows
 autocmd FileType qf wincmd J
 autocmd FileType gitcommit wincmd K
@@ -190,6 +189,8 @@ let g:mustache_abbreviations = 1
 let g:toggle_list_no_mappings = 1
 
 let g:localvimrc_ask = 0
+
+let g:EclimCompletionMethod = 'omnifunc'
 
 " }}}
 
