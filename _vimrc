@@ -68,6 +68,11 @@ set scrolloff=3 " keep 3 lines above and below cursor
 set fillchars=fold:\ 
 let mapleader = ' '
 
+set undofile
+set undodir=~/.vim/undo
+set undolevels=1000
+set undoreload=10000
+
 " }}}
 
 " Colors and Fonts {{{
