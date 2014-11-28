@@ -14,8 +14,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000
+HISTFILESIZE=50000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -71,7 +71,9 @@ export P4CONFIG=.p4config
 
 set -o vi
 
+export PATH="$PATH:/sbin"
 export PATH="$PATH:$HOME/.scripts" # Add scripts to path
+export PATH="$PATH:$HOME/.config/bspwm/panel"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:/opt/android/android-sdk-linux/tools"
 

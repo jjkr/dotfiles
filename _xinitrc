@@ -1,7 +1,21 @@
 [[ -f ~/.Xresources ]] || xrdb -merge ~/.Xresources
 ( ( sleep 10 && /usr/bin/xscreensaver -no-splash ) & )
 vmware-user-suid-wrapper
-wicd-client --tray &
-volumeicon &
-( ( sleep 1 && ~/.scripts/batt-tray.py ) & )
-awesome
+#wicd-client --tray &
+#volumeicon &
+#( ( sleep 1 && ~/.scripts/batt-tray.py ) & )
+#
+xset +fp /usr/share/fonts/local
+xset fp rehash
+
+# Fix for IntelliJ
+wmname LG3D
+
+# Normal cursor
+xsetroot -cursor_name left_ptr &
+# Set wallpaper
+hsetroot -fill ~/media/pics/haines_skier.jpg &
+
+sxhkd &
+exec bspwm
+#panel &
