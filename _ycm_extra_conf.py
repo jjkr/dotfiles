@@ -24,7 +24,7 @@ flags = [
 ]
 
 
-compilation_database_folder = ''
+compilation_database_folder = '~/.tmp'
 
 if os.path.exists( compilation_database_folder ):
   database = ycm_core.CompilationDatabase( compilation_database_folder )
