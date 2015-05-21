@@ -8,7 +8,9 @@ bspc config borderless_monocle  true
 bspc config gapless_monocle     true
 bspc config focus_by_distance   true
 
-bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+bspc monitor LVDS-0 -d 1 2 3 4 5 6 7 8 9 0
+bspc monitor VGA-0 -d 1 2 3 4 5
+bspc monitor DP-1 -d 6 7 8 9 0
 
 bspc rule -a Gimp desktop=^8 follow=on floating=on
 bspc rule -a Chromium desktop=^1
