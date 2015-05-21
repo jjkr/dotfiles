@@ -90,6 +90,7 @@ else
 endif
 highlight LineNr ctermfg=243 cterm=NONE
 highlight TabLineFill ctermbg=234 cterm=NONE
+highlight Visual ctermbg=236 cterm=NONE
 highlight ColorColumn ctermbg=235 cterm=NONE
 highlight Folded ctermfg=154 ctermbg=235 cterm=NONE
 highlight FoldColumn ctermfg=154 ctermbg=235 cterm=NONE
@@ -102,6 +103,10 @@ highlight DiffDelete ctermfg=88 ctermbg=235 cterm=None
 highlight DiffChange ctermbg=235 cterm=None
 highlight DiffText ctermbg=17 cterm=None
 highlight SignColumn ctermbg=Black cterm=NONE
+highlight YcmWarningSign ctermfg=235 ctermbg=11 cterm=None
+highlight YcmErrorSign ctermfg=235 ctermbg=160 cterm=None
+highlight YcmWarningSection ctermbg=235 cterm=None
+highlight YcmErrorSection ctermbg=52 cterm=None
 
 " }}}
 
@@ -123,7 +128,7 @@ autocmd FileType c,cpp,cc,h,hpp setlocal colorcolumn=81
 " Jump to header
 autocmd FileType c,cpp,cc,h,hpp nnoremap <leader>ah :e %:p:s,.hpp$,.X123X,:s,.cpp$,.hpp,:s,.X123X$,.cpp,<CR>
 " Clang Format
-autocmd FileType c,cpp,cc,h,hpp noremap <leader>k :pyf /usr/share/vim/addons/syntax/clang-format-3.6.py<CR>
+autocmd FileType c,cpp,cc,h,hpp noremap <leader>k :pyf ~/opt/clang-format.py<CR>
 
 autocmd Filetype ruby,erb,javascript,json,html,css,scss,xml,xsd setlocal shiftwidth=2 tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=81
 autocmd Filetype erb setlocal shiftwidth=2 tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=81
@@ -175,6 +180,7 @@ let g:ctrlp_custom_ignore = {
     \ 'file': '\.(swp|exe|so|dll|bin|zip|gz|bz2|tar|o)$',
     \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
     \ }
+let g:ctrlp_root_markers = ['.ctrlp']
 
 " Go
 let g:go_bin_path = "/usr/bin"
