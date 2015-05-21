@@ -91,7 +91,7 @@ XF86Audio{Raise,Lower}Volume
 #
 
 alt + Return
-	urxvt -e bash -c "tmux"
+	urxvt
 
 alt + r
 	dmenu_run
