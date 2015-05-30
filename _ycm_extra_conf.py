@@ -17,6 +17,8 @@ flags = [
 '/usr/include',
 '-isystem',
 '/usr/local/include',
+'-isystem',
+'/lib/modules/4.0.4-2-ARCH/build/include',
 '-I',
 '**/src',
 '-I',
