@@ -36,7 +36,7 @@ URxvt*iso14755: false
 *color15 : #EEEEEC
 
 ! Font
-URxvt*font: xft:Inconsolata for Powerline:regular:size=10:antialias=true:hinting=slight
+URxvt*font: xft:Inconsolata for Powerline:regular:size=11:antialias=true:hinting=slight
 Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.hinting:    true
