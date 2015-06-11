@@ -34,6 +34,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'wting/rust.vim'
+Plugin 'Chiel92/vim-autoformat'
 "Plugin 'ervandew/supertab'
 "Plugin 'jiangmiao/auto-pairs'
 "Plugin 'maksimr/vim-jsbeautify'
@@ -125,8 +126,6 @@ set nowrap
 autocmd FileType c,cpp,cc,h,hpp setlocal colorcolumn=81
 " Jump to header
 autocmd FileType c,cpp,cc,h,hpp nnoremap <leader>ah :e %:p:s,.hpp$,.X123X,:s,.cpp$,.hpp,:s,.X123X$,.cpp,<CR>
-" Clang Format
-autocmd FileType c,cpp,cc,h,hpp noremap <leader>k :pyf ~/opt/clang-format.py<CR>
 
 autocmd Filetype ruby,erb,javascript,json,html,css,scss,xml,xsd setlocal shiftwidth=2 tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=81
 autocmd Filetype erb setlocal shiftwidth=2 tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=81
@@ -203,6 +202,8 @@ let g:localvimrc_ask = 0
 
 let g:EclimCompletionMethod = 'omnifunc'
 
+let g:formatdef_clangformat = '"clang-format -style=file"'
+
 " }}}
 
 " Remaps {{{
@@ -228,6 +229,7 @@ nnoremap <leader>n :Dispatch<CR>
 nnoremap <leader>N :Dispatch!<CR>
 nnoremap <leader>aa :A<CR>
 nnoremap <leader>at :A<CR>
+noremap <leader>k :Autoformat<CR>
 " Tabs
 nnoremap th :tabfirst<CR>
 nnoremap tj :tabnext<CR>
