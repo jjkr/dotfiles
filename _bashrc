@@ -71,6 +71,10 @@ export P4CONFIG=.p4config
 
 set -o vi
 
+export CLICOLOR=1
+
+export EDITOR=vim
+
 export PATH="$PATH:/sbin"
 export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/.scripts" # Add scripts to path
