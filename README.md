@@ -1,9 +1,9 @@
-dotfiles
+jjkr's dotfiles
 ===
 
 I am a programmer.
 These are my dot files.
-I use vim, tmux, urxvt, and awesomewm to write c/c++, python, ruby, elixir, bash, javascript, java, scala, SQL, and lots more.
+I use vim, tmux, urxvt, and awesomewm to write c/c++, python, ruby, elixir, bash, javascript, java, scala, SQL, etc.
 
 Install
 =======
