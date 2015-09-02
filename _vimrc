@@ -129,8 +129,7 @@ autocmd FileType c,cpp,cc,h,hpp setlocal colorcolumn=81
 autocmd FileType c,cpp,cc,h,hpp nnoremap <leader>ah :e %:p:s,.hpp$,.X123X,:s,.cpp$,.hpp,:s,.X123X$,.cpp,<CR>
 autocmd FileType c,cpp,cc,h,hpp noremap <leader>k :pyf ~/.bin/clang-format.py<CR>
 
-autocmd Filetype ruby,erb,javascript,json,html,css,scss,xml,xsd,proto setlocal shiftwidth=2 tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=81
-autocmd Filetype javascript setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd Filetype ruby,erb,javascript,json,html,css,scss,xml,xsd,proto,elixir setlocal shiftwidth=2 tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=81
 autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 colorcolumn=81
 
 autocmd BufNewFile,BufRead *.ejs set filetype=html
