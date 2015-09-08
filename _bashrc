@@ -89,3 +89,6 @@ TMUXINATOR_INIT=~/.bin/tmuxinator.bash
 if [ -e $TMUXINATOR_INIT ]; then
     source $TMUXINATOR_INIT
 fi
+
+export NVM_DIR="/Users/joek/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
