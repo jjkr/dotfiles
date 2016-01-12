@@ -16,7 +16,6 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'embear/vim-localvimrc'
 Plugin 'honza/vim-snippets'
 Plugin 'kien/ctrlp.vim'
-Plugin 'marijnh/tern_for_vim'
 Plugin 'milkypostman/vim-togglelist'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'nathanaelkane/vim-indent-guides'
@@ -36,6 +35,7 @@ Plugin 'vim-scripts/taglist.vim'
 Plugin 'wting/rust.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'elixir-lang/vim-elixir'
+"Plugin 'marijnh/tern_for_vim'
 "Plugin 'ervandew/supertab'
 "Plugin 'jiangmiao/auto-pairs'
 "Plugin 'maksimr/vim-jsbeautify'
@@ -229,6 +229,9 @@ nnoremap <leader>N :Dispatch!<CR>
 nnoremap <leader>aa :A<CR>
 nnoremap <leader>at :A<CR>
 noremap <leader>k :Autoformat<CR>
+" YouCompleteMe
+nnoremap <leader>yt :YcmCompleter GetType<CR>
+nnoremap <leader>yd :YcmCompleter GetDoc<CR>
 " Tabs
 nnoremap th :tabfirst<CR>
 nnoremap tj :tabnext<CR>
