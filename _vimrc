@@ -133,6 +133,7 @@ autocmd FileType c,cpp,cc,h,hpp noremap <leader>k :pyf ~/.bin/clang-format.py<CR
 autocmd Filetype ruby,erb,javascript,json,html,css,scss,xml,xsd,proto,elixir setlocal shiftwidth=2 tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=81
 autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 colorcolumn=81
 
+autocmd BufNewFile,BufRead *.C++ set filetype=cpp
 autocmd BufNewFile,BufRead *.ejs set filetype=html
 
 " Stretch preview/quickfix windows
