@@ -2,7 +2,7 @@ BasedOnStyle: Google
 ColumnLimit: 80
 UseTab: Never
 AlignAfterOpenBracket: true
-AlignConsecutiveDeclarations: false
+#AlignConsecutiveDeclarations: false
 AlignTrailingComments: true
 AllowShortFunctionsOnASingleLine: All
 AllowShortIfStatementsOnASingleLine: false
