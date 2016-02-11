@@ -33,9 +33,11 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-scripts/taglist.vim'
-Plugin 'wting/rust.vim'
+Plugin 'rust-lang/rust.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'clausreinke/typescript-tools.vim'
 "Plugin 'marijnh/tern_for_vim'
 "Plugin 'ervandew/supertab'
 "Plugin 'jiangmiao/auto-pairs'
@@ -125,10 +127,10 @@ set nowrap
 
 " Filetype specific {{{
 
-autocmd FileType c,cpp,cc,h,hpp setlocal colorcolumn=81
+autocmd FileType c,cpp,cc,h,hpp,rust setlocal colorcolumn=81
 " Jump to header
 autocmd FileType c,cpp,cc,h,hpp nnoremap <leader>ah :e %:p:s,.hpp$,.X123X,:s,.cpp$,.hpp,:s,.X123X$,.cpp,<CR>
-autocmd FileType c,cpp,cc,h,hpp noremap <leader>k :pyf ~/.bin/clang-format.py<CR>
+autocmd FileType c,cpp,cc,h,hpp,javascript,typescript noremap <leader>k :pyf ~/.bin/clang-format.py<CR>
 
 autocmd Filetype ruby,erb,javascript,json,html,css,scss,xml,xsd,proto,elixir setlocal shiftwidth=2 tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=81
 autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 colorcolumn=81
@@ -204,6 +206,8 @@ let g:localvimrc_ask = 0
 let g:EclimCompletionMethod = 'omnifunc'
 
 let g:formatdef_clangformat = "'clang-format -style=file'"
+
+let g:typescript_compiler_options = '--target es2015'
 
 " }}}
 
