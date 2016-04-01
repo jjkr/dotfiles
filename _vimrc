@@ -97,7 +97,7 @@ highlight LineNr ctermfg=243 cterm=NONE
 highlight TabLineFill ctermbg=234 cterm=NONE
 highlight Visual ctermbg=236 cterm=NONE
 highlight ColorColumn ctermbg=235 cterm=NONE
-highlight Folded ctermfg=154 ctermbg=235 cterm=NONE
+highlight Folded ctermfg=192 ctermbg=235 cterm=NONE
 highlight FoldColumn ctermfg=154 ctermbg=235 cterm=NONE
 highlight Search ctermbg=3 ctermfg=Black cterm=NONE
 highlight Pmenu ctermfg=Black ctermbg=Blue cterm=None
@@ -210,6 +210,7 @@ let g:EclimCompletionMethod = 'omnifunc'
 let g:formatdef_clangformat = "'clang-format -style=file'"
 
 let g:typescript_compiler_options = '--target es2015'
+let g:syntastic_javascript_checkers = ['eslint']
 
 " }}}
 
