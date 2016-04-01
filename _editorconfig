@@ -2,7 +2,12 @@ root = true
 
 [*]
 end_of_file = lf  # Unix line endings
-insert_final_newline = true
+
+[**.cpp]
+indent_style = space
+indent_size = 4
+preserve_newlines = true
+wrap_line_length = 80
 
 [**.js]
 bin = node
