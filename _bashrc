@@ -75,6 +75,8 @@ export CLICOLOR=1
 
 export EDITOR=vim
 
+export CTEST_OUTPUT_ON_FAILURE=1
+
 export PATH="$PATH:/sbin"
 export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/.scripts" # Add scripts to path
