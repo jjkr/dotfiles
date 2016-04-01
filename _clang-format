@@ -1,6 +1,8 @@
+---
 BasedOnStyle: Google
 ColumnLimit: 80
 UseTab: Never
+<<<<<<< b11f8556c01c37bdbe2f359f2a40b156f13bf088
 AlignAfterOpenBracket: true
 #AlignConsecutiveDeclarations: false
 AlignTrailingComments: true
@@ -12,8 +14,14 @@ Language: Cpp
 Standard: Cpp11
 TabWidth: 4
 AccessModifierOffset: -4
+=======
+---
+Language: Cpp
+Standard: Cpp11
 AlignEscapedNewlinesLeft: true
 BreakBeforeBraces: Allman
+TabWidth: 4
+AccessModifierOffset: -4
 ConstructorInitializerIndentWidth: 4
 IndentWidth: 4
 ContinuationIndentWidth: 4
@@ -26,6 +34,9 @@ PointerAlignment: Left
 IndentCaseLabels: false
 ---
 Language: JavaScript
-IndentWidth: 2
 BreakBeforeBraces: Attach
 SpaceBeforeParens: ControlStatements
+TabWidth: 2
+IndentWidth: 2
+ContinuationIndentWidth: 2
+SpacesInContainerLiterals: false
