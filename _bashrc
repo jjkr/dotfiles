@@ -14,8 +14,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=10000
-HISTFILESIZE=50000
+HISTSIZE=50000
+HISTFILESIZE=100000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -68,11 +68,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# OS X bash completion
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-  . `brew --prefix`/etc/bash_completion
-fi
-
 export P4CONFIG=.p4config
 
 set -o vi
@@ -89,19 +84,6 @@ export PATH="$PATH:$HOME/.scripts" # Add scripts to path
 export PATH="$PATH:$HOME/.config/bspwm/panel"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:/opt/android/android-sdk-linux/tools"
-
-export ANDROID_SDK_HOME="/opt/android/android-sdk-linux"
-export ANDROID_NDK_HOME="/opt/android/android-ndk-r10c"
-
-TMUXINATOR_INIT=~/.bin/tmuxinator.bash
-if [ -e $TMUXINATOR_INIT ]; then
-    source $TMUXINATOR_INIT
-fi
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-export CTEST_OUTPUT_ON_FAILURE=1
 
 export RRRR_HOME=~/fw/rrrr
 export HPT_IP=169.254.82.12
