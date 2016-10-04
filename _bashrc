@@ -46,6 +46,7 @@ fi
 #alias ll='ls -l'
 #alias la='ls -A'
 #alias l='ls -CF'
+alias gits='git status --short --branch'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -65,6 +66,11 @@ if ! shopt -oq posix; then
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
+fi
+
+# OS X bash completion
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  . `brew --prefix`/etc/bash_completion
 fi
 
 export P4CONFIG=.p4config
@@ -98,4 +104,9 @@ export NVM_DIR="$HOME/.nvm"
 export CTEST_OUTPUT_ON_FAILURE=1
 
 export RRRR_HOME=~/fw/rrrr
-export HPT_IP=169.254.82.13
+export HPT_IP=169.254.82.12
+export PATH=$HOME/.local/bin:$PATH
+
+# Go config
+export GOPATH=$HOME/code/go
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
