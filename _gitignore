@@ -2,3 +2,4 @@
 .ycm_extra_conf.pyc
 .ctrlp
 *.pyc
+.idea
