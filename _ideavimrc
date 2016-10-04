@@ -1,3 +1,15 @@
-let mapleader = ' '
+let mapleader=' '
 
 unmap <C-h>
+nnoremap <leader>tc :action ActivateCMakeToolWindow<CR>
+nnoremap <leader>tr :action ActivateRunToolWindow<CR>
+nnoremap <leader>tt :action ActivateTerminalToolWindow<CR>
+nnoremap <leader>tg :action ActivateVersionControlToolWindow<CR>
+nnoremap <leader>k :action Tool_External Tools_clang-format<CR>
+"nnoremap <C-k> :action Tool_External Tools_clang-format<CR>
+vnoremap <leader>w :action Tool_External Tools_clang-format-range<CR>
+"vnoremap <C-k> :action Tool_External Tools_clang-format-range<CR>
+nnoremap <leader>v :action SplitVertically<CR>
+nnoremap <leader>c :action HideAllWindows<CR>
+nnoremap <leader>ah :action GotoRelated<CR>
+nnoremap <leader>w :action SaveAll<CR>
