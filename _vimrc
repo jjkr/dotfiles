@@ -13,14 +13,12 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'chriskempson/base16-vim'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'digitaltoad/vim-jade'
+"Plugin 'digitaltoad/vim-jade'
 Plugin 'embear/vim-localvimrc'
-Plugin 'honza/vim-snippets'
+"Plugin 'honza/vim-snippets'
 Plugin 'kien/ctrlp.vim'
 Plugin 'milkypostman/vim-togglelist'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'pangloss/vim-javascript'
+"Plugin 'pangloss/vim-javascript'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -33,13 +31,14 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-scripts/taglist.vim'
-Plugin 'rust-lang/rust.vim'
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'clausreinke/typescript-tools.vim'
+"Plugin 'rust-lang/rust.vim'
+"Plugin 'Chiel92/vim-autoformat'
+"Plugin 'elixir-lang/vim-elixir'
+"Plugin 'leafgarland/typescript-vim'
+"Plugin 'clausreinke/typescript-tools.vim'
+"Plugin 'rhysd/vim-wasm'
 "Plugin 'marijnh/tern_for_vim'
-"Plugin 'ervandew/supertab'
+Plugin 'ervandew/supertab'
 "Plugin 'jiangmiao/auto-pairs'
 "Plugin 'maksimr/vim-jsbeautify'
 "Plugin 'editorconfig/editorconfig-vim'
@@ -241,6 +240,8 @@ nnoremap <leader>N :Dispatch!<CR>
 nnoremap <leader>aa :A<CR>
 nnoremap <leader>at :A<CR>
 noremap <leader>k :Autoformat<CR>
+nnoremap <M-s> :w<CR>
+inoremap <M-s> <ESC>:w<CR>i
 " YouCompleteMe
 nnoremap <leader>yt :YcmCompleter GetType<CR>
 nnoremap <leader>yd :YcmCompleter GetDoc<CR>
