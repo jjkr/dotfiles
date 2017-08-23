@@ -90,5 +90,5 @@ export HPT_IP=169.254.82.12
 export PATH=$HOME/.local/bin:$PATH
 
 # Go config
-export GOPATH=$HOME/code/go
-export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export GOPATH=$HOME/go
+export PATH=$PATH:~/go/bin
