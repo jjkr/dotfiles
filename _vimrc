@@ -270,6 +270,7 @@ nnoremap <leader>f :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " toggle spell check
 map <F6> :setlocal spell! spelllang=en_us<CR>
+map <leader>ss :setlocal spell! spelllang=en_us<CR>
 map <F8> :TlistToggle<CR>
 map <F9> :NERDTreeToggle<CR>
 " generate tags
