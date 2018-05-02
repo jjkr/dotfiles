@@ -277,10 +277,10 @@ map <F9> :NERDTreeToggle<CR>
 map <F12> :!ctags -V -R --exclude=build --exclude=hwbuild --exclude=3rdParty --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
 
 " Splits
-nmap <C-J> <C-W>j
-nmap <C-K> <C-W>k
-nmap <C-H> <C-W>h
-nmap <C-L> <C-W>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 " }}}
 
