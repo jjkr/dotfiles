@@ -1,53 +1,36 @@
 set nocompatible
 
-" Vundle plugins {{{
+" vim-plug {{{
 
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'chriskempson/base16-vim'
-Plugin 'christoomey/vim-tmux-navigator'
-"Plugin 'digitaltoad/vim-jade'
-Plugin 'embear/vim-localvimrc'
-"Plugin 'honza/vim-snippets'
-Plugin 'kien/ctrlp.vim'
-Plugin 'milkypostman/vim-togglelist'
-"Plugin 'pangloss/vim-javascript'
-Plugin 'rking/ag.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-projectionist'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'vim-scripts/taglist.vim'
-Plugin 'fatih/vim-go'
-Plugin 'nfvs/vim-perforce'
-"Plugin 'rust-lang/rust.vim'
-"Plugin 'Chiel92/vim-autoformat'
-"Plugin 'elixir-lang/vim-elixir'
-"Plugin 'leafgarland/typescript-vim'
-"Plugin 'clausreinke/typescript-tools.vim'
-"Plugin 'rhysd/vim-wasm'
-"Plugin 'marijnh/tern_for_vim'
-Plugin 'ervandew/supertab'
-"Plugin 'jiangmiao/auto-pairs'
-"Plugin 'maksimr/vim-jsbeautify'
-"Plugin 'editorconfig/editorconfig-vim'
-"Plugin 'klen/python-mode'
-"Plugin 'vim-ruby/vim-ruby'
-call vundle#end()
-filetype plugin indent on
+" install vim-plug on demand
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'kien/ctrlp.vim'
+Plug 'milkypostman/vim-togglelist'
+Plug 'rking/ag.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'vim-scripts/taglist.vim'
+Plug 'fatih/vim-go'
+Plug 'ervandew/supertab'
+call plug#end()
 
 " }}}
 
